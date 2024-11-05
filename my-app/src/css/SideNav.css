@@ -1,58 +1,45 @@
+
 .sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    padding-top: 20px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    background-color: #333;
-  }
-  
-  .sidenav a, .dropdown-btn {
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    color: white;
-    display: flex; /* Align icon and text horizontally */
-    align-items: center;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .sidenav a:hover, .dropdown-btn:hover {
-    background-color: #575757;
-  }
-  
-  .sidenav a svg, .dropdown-btn svg {
-    margin-right: 10px; /* Space between the icon and the text */
-  }
-  
-  .dropdown-container {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-  }
-  
-  .dropdown-container.show {
-    display: block;
-  }
-  
-  .dropdown-btn .fa {
-    margin-left: 10px;
-  }
-  
+  height: calc(100vh - 20px);
+  width: 200px;
+  min-width: 200px;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:	#080808;
+  padding-top: 20px;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+  background-color: #575757;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.dropdown-container.show {
+  display: block;
+}
+
+.dropdown-btn .fa {
+  margin-left: 10px;
+}
+

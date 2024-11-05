@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMusic, faHome, faUser, faCog, faBriefcase, faSearch, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faClock, faBook, faBroadcastTower, faMusic, faCaretDown, faCaretUp, faFeather} from '@fortawesome/free-solid-svg-icons';
 
 function SideNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -11,38 +11,40 @@ function SideNav() {
   };
 
   return (
-    <div className="sidenav">
-      {/* Word logo at the top */}
-      <div className="logo">
-        <FontAwesomeIcon icon={faMusic} /> Musify
-      </div>
-      
-      <a href="#about">
-        <FontAwesomeIcon icon={faUser} /> About
+    <div className="sidenav">   
+      <div className="logo">     
+
+      <FontAwesomeIcon icon={faFeather} className="icon" /> Musify
+            
+       
+      </div>    
+
+      <a href="#home">
+        <FontAwesomeIcon icon={faHome} className="icon" /> Home
+      </a>  
+      <a href="#watch-later">
+        <FontAwesomeIcon icon={faClock} className="icon" /> Watch Later
+      </a>   
+      <a href="#library">
+        <FontAwesomeIcon icon={faBook} className="icon" /> Your Library
       </a>
-      <a href="#services">
-        <FontAwesomeIcon icon={faCog} /> Services
+      <a href="#live-radio">
+        <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> Live Radio
       </a>
-      <a href="#clients">
-        <FontAwesomeIcon icon={faBriefcase} /> Clients
-      </a>
-      <a href="#contact">
-        <FontAwesomeIcon icon={faHome} /> Contact
-      </a>
+      <a href="#playlist">
+        <FontAwesomeIcon icon={faMusic} className="icon" /> Your Playlist
+      </a>     
 
       <button className="dropdown-btn" onClick={toggleDropdown}>
-        <FontAwesomeIcon icon={dropdownOpen ? faCaretUp : faCaretDown} /> Dropdown
+        Creators Journey
+        <FontAwesomeIcon icon={dropdownOpen ? faCaretUp : faCaretDown} className="icon" />
       </button>
-
+      
       <div className={`dropdown-container ${dropdownOpen ? 'show' : ''}`}>
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#your-albums">Your Albums</a>
+        <a href="#your-songs">Your Songs</a>
+        <a href="#your-records">Your Records</a>
       </div>
-
-      <a href="#search">
-        <FontAwesomeIcon icon={faSearch} /> Search
-      </a>
     </div>
   );
 }
