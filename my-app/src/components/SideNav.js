@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faClock, faBook, faBroadcastTower, faMusic, faCaretDown, faCaretUp, faFeather} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHeart, faChartBar, faFireFlameCurved, faClock, faBook, faBroadcastTower, faMusic, faCaretDown, faCaretUp, faFeather} from '@fortawesome/free-solid-svg-icons';
 
 function SideNav() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -21,7 +21,21 @@ function SideNav() {
 
       <a href="#home">
         <FontAwesomeIcon icon={faHome} className="icon" /> Home
-      </a>  
+      </a>        
+      <a href="#trending">
+        <FontAwesomeIcon icon={faMusic} className="icon" /> Artists
+      </a>     
+   
+      <a href="#trending">
+        <FontAwesomeIcon icon={faFireFlameCurved} className="icon" /> Trending
+      </a>    
+      <a href="#trending">
+        <FontAwesomeIcon icon={faChartBar} className="icon" /> Chats
+      </a>     
+      <a href="#trending">
+        <FontAwesomeIcon icon={faMusic} className="icon" /> Genres
+      </a>     
+   
       <a href="#watch-later">
         <FontAwesomeIcon icon={faClock} className="icon" /> Watch Later
       </a>   
@@ -33,7 +47,8 @@ function SideNav() {
       </a>
       <a href="#playlist">
         <FontAwesomeIcon icon={faMusic} className="icon" /> Your Playlist
-      </a>     
+      </a>   
+     
 
       <button className="dropdown-btn" onClick={toggleDropdown}>
         Creators Journey
@@ -44,8 +59,15 @@ function SideNav() {
         <a href="#your-albums">Your Albums</a>
         <a href="#your-songs">Your Songs</a>
         <a href="#your-records">Your Records</a>
-      </div>
-    </div>
+      </div>  
+      <a href="#playlist">
+        <FontAwesomeIcon icon={faHeart} className="icon" /> Liked
+      </a>      
+      <a href="#playlist">
+        <FontAwesomeIcon icon={faHeart} className="icon" /> Podcats
+      </a>     
+    </div>  
+    
   );
 }
 

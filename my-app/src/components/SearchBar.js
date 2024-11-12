@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSearch, FaFeather } from 'react-icons/fa';
+import { FaSearch, FaFeather, FaUserCircle } from 'react-icons/fa';
 
 function SearchBar({ data, onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -69,7 +69,7 @@ function SearchBar({ data, onSearch }) {
         </button>
       </div>
       
-      {/* Sign In and Sign Up Buttons Section */}
+      {/* Sign In, Sign Up, and Profile Placeholder Section */}
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {/* Sign In Button */}
         <button   
@@ -95,12 +95,16 @@ function SearchBar({ data, onSearch }) {
             color: '#fff',
             border: 'none',
             borderRadius: '4px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            marginRight: '10px'
           }}
           onClick={() => console.log('Sign Up clicked')}
         >
           Sign Up
         </button>
+
+        {/* Profile Placeholder */}
+        <FaUserCircle style={{ fontSize: '28px', color: '#FFFFFF' }} />
       </div>
     </div>
   );

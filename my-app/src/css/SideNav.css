@@ -23,10 +23,11 @@
   text-align: left;
   cursor: pointer;
   outline: none;
+  margin-bottom: 10px; /* Add spacing between items */
 }
 
 .sidenav a:hover, .dropdown-btn:hover {
-  background-color: #575757;
+  color: aqua;
 }
 
 .dropdown-container {

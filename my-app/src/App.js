@@ -6,7 +6,7 @@ import Music from './components/Music';
 import Footer from './components/Footer'; 
 import PopularRadio from './components/PopularRadio'; 
 import Workout from './components/Workout'; 
-import SearchBar from './components/SearchBar';  
+import SearchBar from './components/SearchBar';    
 
 
 
