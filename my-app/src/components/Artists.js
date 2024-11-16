@@ -1,7 +1,7 @@
 import React from 'react';  
 import '../css/Music.css';
 
-function Music() {
+function Artists() {
   const cardsData = [
     {
       title: 'Chris Brown',
@@ -38,11 +38,11 @@ function Music() {
       text: 'Artist',
       imageUrl: 'https://static.standard.co.uk/2024/05/08/11/59/Future_3vqmbcm4.jpeg?width=1200&auto=webp&quality=75',
       link: '#'
-    },
+    }
   ];
 
   return (
-    <div>
+    <div className='artists-wrapper'>
       <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Featured Artists</h2>
       <div className="card-container" style={{ display: 'flex', flexWrap: 'wrap' }}>       
         {cardsData.map((card, index) => (    
@@ -60,4 +60,4 @@ function Music() {
   );
 }
 
-export default Music;
+export default Artists;

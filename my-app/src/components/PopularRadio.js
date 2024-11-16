@@ -11,7 +11,7 @@ function PopularRadio() {
     },
     {
       title: 'Talking Sopranos',
-      text: 'Some quick example text for Card 2.',
+      text: '',
       imageUrl: 'https://i.scdn.co/image/ab6765630000ba8a01faa5363f7406bd60aaad42',
       link: '#'
     },
@@ -29,8 +29,14 @@ function PopularRadio() {
     },
     {
       title: 'Crime Junkie',
-      text: 'Some quick example text for Card 5.',
+      text: '',
       imageUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/8c/35/04/8c350430-2fbf-98d0-0a25-00b76550ffeb/mza_13445204151221888086.jpg/1200x1200bf-60.jpg',
+      link: '#'
+    }, 
+    {
+      title: 'Morbid',
+      text: '',
+      imageUrl: 'https://content.production.cdn.art19.com/images/58/4e/4c/d8/584e4cd8-ffd2-46e0-83c6-72ad91a4b84a/a4d289289f109b0c765e5848a7263a6cfe11bd78b244aa5ae75546e80b0961e082b632241a515eda402f44c79e09b0cf6083dcd6be4390051c38ba01a2b9b80e.jpeg',
       link: '#'
     }
   ];

@@ -1,0 +1,84 @@
+{
+    "Genres":    [
+       {
+         "id": "1",
+         "Title": "HipHop", 
+         "imageurl": "https://images6.alphacoders.com/909/909094.jpg"
+       },
+       {
+        "id": "2",
+        "Title": "R&B", 
+        "imageurl": "https://i.pinimg.com/originals/fe/0b/bb/fe0bbbfa8157c7c96e59d0a9ced850c5.jpg"
+      },  
+      {
+        "id": "3",
+        "Title": "Pop", 
+        "imageurl": "https://static01.nyt.com/images/2018/12/30/arts/30yearend-pop2/merlin_147857643_8e0c5c65-4549-4946-b51d-49425b9dcf24-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+      },   
+      {
+        "id": "4",
+        "Title": "Reggaeton", 
+        "imageurl": "https://i.pinimg.com/736x/f7/d4/e1/f7d4e12908232c4f7926ffb5102d42ff.jpg"
+      },    
+      {
+        "id": "5",
+        "Title": "Reggae", 
+        "imageurl": "https://wallpapercave.com/wp/SosBVD6.jpg"
+      },    
+      {
+        "id": "6",
+        "Title": "K-Pop", 
+        "imageurl": "https://images4.alphacoders.com/116/thumb-1920-1167338.jpg"
+      },   
+      {
+        "id": "7",
+        "Title": "Afro Beats", 
+        "imageurl": "https://wallpapercave.com/wp/wp11603673.jpg"
+      },    
+      {
+        "id": "8",
+        "Title": "Country-Music", 
+        "imageurl": "https://e1.pxfuel.com/desktop-wallpaper/141/671/desktop-wallpaper-music-toby-keith-thumbnail.jpg"
+      },    
+     
+      {
+        "id": "9",
+        "Title": "Anime", 
+        "imageurl": "https://preview.redd.it/new-key-visual-season-2-v0-p66ys0qw4ppa1.png?auto=webp&s=dbebf95a0a830d262a81b4ca5dca9e9e0cf99bd2"
+      } ,
+      {
+        "id":"10",
+        "Title":"Christian Music", 
+        "imageurl":"https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?cs=srgb&dl=pexels-lstan-2147029.jpg&fm=jpg"
+      },  
+      {
+        "id": "11",
+        "Title": "Phonk", 
+        "imageurl": "https://i.redd.it/why-is-this-style-of-cover-art-so-popular-among-phonk-v0-4bcz4bezfova1.jpg?width=640&format=pjpg&auto=webp&s=9d80ee33fb9e635835438b8921822b9c73972263"
+      },   
+      {
+        "id": "12",
+        "Title": "Jazz", 
+        "imageurl": "https://www.datocms-assets.com/66357/1718176885-0o0a9177.webp?auto=format&fit=max&w=3840&q=75"
+      },    
+      {
+        "id": "13",
+        "Title": "Disco", 
+        "imageurl": "https://wallup.net/wp-content/uploads/2019/10/458685-disco-dance-music-club.jpg"
+      },    
+     
+      {
+        "id": "14",
+        "Title": "Electronic", 
+        "imageurl": "https://wallpapers.com/images/featured/electronic-dance-music-ggf56eubs12efkdd.jpg"
+      } ,
+      {
+        "id":"15",
+        "Title":"Arab Music", 
+        "imageurl":"https://timtaj.com/wp-content/uploads/2020/06/Arabic-Trap-Music.jpg"
+      } 
+     
+       
+    
+     ]
+   }

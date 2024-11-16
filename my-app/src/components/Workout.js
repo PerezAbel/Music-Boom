@@ -32,6 +32,12 @@ function Workout() {
       text: '',
       imageUrl: 'https://c4.wallpaperflare.com/wallpaper/121/590/416/anime-girlfriend-beta-walking-music-road-hd-wallpaper-preview.jpg',
       link: '#'
+    }, 
+    {
+      title: 'Roadtrip',
+      text: '',
+      imageUrl: 'https://i.pinimg.com/originals/b4/8d/4c/b48d4c7166f4927b2a02cb9580962617.jpg',
+      link: '#'
     }
   ];
 
