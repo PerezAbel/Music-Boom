@@ -30,7 +30,10 @@ function Genres({ genres = [] }) {
         {filteredGenres.map((item) => (     
           <div className="Genres" key={item.id}> {/* Ensure the key is unique, using item.id */}
             <div className="Genres-img" style={{ backgroundImage: `url(${item.imageurl})` }}>
-              <div className="Genres-overlay">
+            <button className="play-button" onClick={() => console.log(`Play ${item.Title}`)}>
+                ▶
+              </button>
+              <div className="Genres-overlay">  
                 <h5 className="Genres-title">{item.Title}</h5>
                 <p className="Genres-text">{item.text}</p> {/* Correct reference */}
               </div>
@@ -44,3 +47,7 @@ function Genres({ genres = [] }) {
 }
 
 export default Genres;
+
+
+
+

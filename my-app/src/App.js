@@ -1,6 +1,7 @@
 import './App.css';  
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';   
+
 
 /* SideNavPages */
 import SideNav from './components/SideNav';
@@ -24,7 +25,26 @@ function App() {
     fetch('http://localhost:3005/Genres')
       .then((response) => response.json())
       .then((data) => setGenres(data));
+  }, []);    
+  
+  
+  
+  const [podcasts, setPodcasts] = useState([]);
+  useEffect(() => {
+    console.log('Fetching data...');
+    fetch('http://localhost:4000/Podcasts')
+      .then((response) => response.json())
+      .then((data) => setPodcasts(data));
+  }, []);   
+
+  const [artists, setArtists] = useState([]);
+  useEffect(() => {
+    console.log('Fetching data...');
+    fetch('http://localhost:4005/Artists')
+      .then((response) => response.json())
+      .then((data) => setArtists(data));
   }, []);
+
 
   return (
     <div className="App">
@@ -33,7 +53,7 @@ function App() {
           <SideNav />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/artists" element={<Artists />} />
+            <Route path="/artists" element={<Artists artists={artists}/>} />
             <Route path="/trending" element={<Trending />} />
             <Route path="/charts" element={<Charts />} />
             <Route path="/genres" element={<Genres genres={genres} />} />
@@ -42,7 +62,7 @@ function App() {
             <Route path="/liveradio" element={<LiveRadio />} />
             <Route path="/playlist" element={<Playlist />} />
             <Route path="/liked" element={<Liked />} />
-            <Route path="/podcasts" element={<Podcasts />} />
+            <Route path="/podcasts" element={<Podcasts podcasts={podcasts}/>} />
           </Routes>
         </Router> 
       </header>

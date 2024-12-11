@@ -58,5 +58,25 @@
  
   .search-bar {
   
+  }   
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .Genres:hover .play-button {
+    display: block;
   }
   
