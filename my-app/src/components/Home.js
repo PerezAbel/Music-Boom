@@ -4,14 +4,16 @@ import Music from './Music';
 import Albums from './Albums';
 import PopularRadio from './PopularRadio';
 import Workout from './Workout';
-import Footer from './Footer';
+import Footer from './Footer';   
+import ImageDisplay from './ImageDisplay';      
 
 
 function Home() {
     return (  
       <>    
         <div className='Main'>
-            <SearchBar />
+            <SearchBar />      
+            <ImageDisplay />  
             <Music />
             <Albums />
             <PopularRadio />

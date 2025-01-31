@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Workout() {
-  const Albums = [
+  const cardsData = [
     {
       title: 'Workout',
       text: '',
@@ -18,7 +18,7 @@ function Workout() {
     {
       title: 'Workout',
       text: '',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEzwHpfYjUwgyZablAXTQKONGWA0TFWvu4yw&s',
+      imageUrl: 'https://advancedbodymetrics.com/wp-content/uploads/2024/02/best-5-day-workout-spli-for-muscle-and-fitness.jpg',
       link: '#'
     },
     {
@@ -41,23 +41,25 @@ function Workout() {
     }
   ];
 
+
   return (
     <div>
-      <h2 style={{ textAlign: 'left' ,color:'#FFFFFF'}}>Tunez</h2>
-      <div className="card-container" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom:'30px'}}>       
-        {Albums.map((albums, index) => (    
-          <div key={index} className="card" style={{ width: '100rem' }}>
-            <img src={albums.imageUrl} className="card-img-top" alt={albums.title} />    
-            <div className="card-body">
-              <h5 className="card-title">{albums.title}</h5>
-              <p className="card-text">{albums.text}</p>
-              <button className="play-button">▶Explore </button>
-            </div>
+      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Popular Everday Tunez</h2>
+      <div className="card-container">   
+        {cardsData.map((card, index) => (    
+          <div key={index} className="card">
+            <img src={card.imageUrl} className="card-img" alt={card.title} />    
+            <div className="card-title">{card.title}</div> {/* Artist Name */}
+            <button className="play-button" onClick={() => console.log()}>
+                ▶
+            </button>         
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+
 
 export default Workout;  

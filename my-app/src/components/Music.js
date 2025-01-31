@@ -6,14 +6,13 @@ function Music() {
     {
       title: 'Chris Brown',
       text: 'Artist',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF8yQFNZ1i6DF8e68OKN3Ggx4SHsATve2nr-6OSAS0zDxnH8N5-k-kGY8vuC81_aCNMCM&usqp=CAU',
+      imageUrl: 'https://s1.ticketm.net/dam/a/c02/93faea5e-ee33-411f-a8e6-6df0bb884c02_RETINA_PORTRAIT_3_2.jpg',
       link: ''
     },
     {
       title: 'Kendrick Lamar',
       text: 'Artist',
-      imageUrl: 'https://yt3.googleusercontent.com/V4FqOieQ9y9dnErXPUZNWl1hyLafxIK7F55n5M8LVhPBmEou8kAbNuMlUZx23DoJHvH1sWG56No=s900-c-k-c0x00ffffff-no-rj',
-      link: ''
+      imageUrl: "https://images6.alphacoders.com/909/909094.jpg"
     },
     {
       title: 'Ariana Grande',
@@ -24,7 +23,7 @@ function Music() {
     {
       title: 'Coldplay',
       text: 'Artist',
-      imageUrl: 'https://dynamicmedia.livenationinternational.com/t/u/f/09056261-24d3-4099-93b1-df792e152dab.jpg',
+      imageUrl: 'https://artist99.cdn107.com/f7d/f7df8504d3756b4052c381941d684a51_xl.jpg',
       link: '#'
     },
     {
@@ -44,15 +43,14 @@ function Music() {
   return (
     <div>
       <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Featured Artists</h2>
-      <div className="card-container" style={{ display: 'flex', flexWrap: 'wrap' }}>       
+      <div className="card-container">   
         {cardsData.map((card, index) => (    
-          <div key={index} className="card" style={{ width: '18rem', margin: '10px', borderRadius: '10px', overflow: 'hidden' }}>
-            <img src={card.imageUrl} className="card-img-top" alt={card.title} />    
-            <div className="card-body">
-              <h5 className="card-title">{card.title}</h5>
-              <p className="card-text">{card.text}</p>
-              <button className="play-button">▶Explore </button>
-            </div>
+          <div key={index} className="card">
+            <img src={card.imageUrl} className="card-img" alt={card.title} />    
+            <div className="card-title">{card.title}</div> {/* Artist Name */}
+            <button className="play-button" onClick={() => console.log()}>
+                ▶
+            </button>         
           </div>
         ))}
       </div>

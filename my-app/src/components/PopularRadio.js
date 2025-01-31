@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function PopularRadio() {
-  const Albums = [
+  const  cardsData = [
     {
       title: 'Serial',
       text: '',
@@ -41,18 +41,18 @@ function PopularRadio() {
     }
   ];
 
+ 
   return (
     <div>
-      <h2 style={{ textAlign: 'left', color:'#FFFFFF'}}>Podcasts</h2>
-      <div className="card-container" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>       
-        {Albums.map((albums, index) => (    
-          <div key={index} className="card" style={{ width: '100rem' }}>
-            <img src={albums.imageUrl} className="card-img-top" alt={albums.title} />    
-            <div className="card-body">
-              <h5 className="card-title">{albums.title}</h5>
-              <p className="card-text">{albums.text}</p>
-              <button className="play-button">▶Explore </button>
-            </div>
+      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Featured Artists</h2>
+      <div className="card-container">   
+        {cardsData.map((card, index) => (    
+          <div key={index} className="card">
+            <img src={card.imageUrl} className="card-img" alt={card.title} />    
+            <div className="card-title">{card.title}</div> {/* Artist Name */}
+            <button className="play-button" onClick={() => console.log()}>
+                ▶
+            </button>         
           </div>
         ))}
       </div>
@@ -60,4 +60,6 @@ function PopularRadio() {
   );
 }
 
-export default PopularRadio;  
+
+export default PopularRadio;    
+

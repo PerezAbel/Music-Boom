@@ -41,7 +41,7 @@ function SideNav() {
       </Link>
       
       <Link to="/live-radio">
-        <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> Live Radio
+        <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> Concerts
       </Link>
       
       <Link to="/playlist">
@@ -54,9 +54,27 @@ function SideNav() {
       
       <Link to="/podcasts">
         <FontAwesomeIcon icon={faHeart} className="icon" /> Podcasts
-      </Link>
+      </Link> 
     </div>
   );
 }
-
+  
 export default SideNav;
+
+
+
+
+{/* <Link to="/playlist">
+        <FontAwesomeIcon icon={faMusic} className="icon" /> FanBase
+      </Link>
+      
+      <Link to="/liked">
+        <FontAwesomeIcon icon={faHeart} className="icon" /> Music Diary</Link>
+      
+      <Link to="/podcasts">
+        <FontAwesomeIcon icon={faHeart} className="icon" /> Creating  Memory 
+      </Link>  
+
+      Mood Powered Playlist  */}   
+
+      // Music Pool 
