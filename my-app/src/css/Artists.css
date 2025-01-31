@@ -76,4 +76,39 @@
       
       .Artists:hover .play-button {
         display: block;
+      }  
+
+
+
+      .nav-bar {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+        padding: 10px;
       }
+      
+      .nav-item {
+        display: flex;
+        align-items: center;
+        background-color: #1db954; /* Spotify Green */
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-item:hover {
+        background-color: #17a34a; /* Darker Green */
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      .nav-icon {
+        margin-right: 8px;
+        font-size: 16px;
+      }
+      

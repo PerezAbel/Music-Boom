@@ -18,30 +18,36 @@ function SideNav() {
       
       <Link to="/artists">
         <FontAwesomeIcon icon={faMusic} className="icon" /> Artists
-      </Link>
-      
-      <Link to="/trending">
-        <FontAwesomeIcon icon={faFireFlameCurved} className="icon" /> Trending
-      </Link>
-      
-      <Link to="/charts">
-        <FontAwesomeIcon icon={faChartBar} className="icon" /> Charts
-      </Link>
+      </Link>   
       
       <Link to="/genres">
         <FontAwesomeIcon icon={faMusic} className="icon" /> Genres
+      </Link>  
+
+      <Link to="/podcasts">
+        <FontAwesomeIcon icon={faHeart} className="icon" /> Podcasts
+      </Link> 
+      
+      <Link to="/trending">
+        <FontAwesomeIcon icon={faFireFlameCurved} className="icon" /> Events & Concerts
       </Link>
+      
+      <Link to="/charts">
+        <FontAwesomeIcon icon={faChartBar} className="icon" /> New & Trending
+      </Link>
+      
+      
       
       <Link to="/watch-later">
         <FontAwesomeIcon icon={faClock} className="icon" /> Watch Later
       </Link>
       
       <Link to="/your-library">
-        <FontAwesomeIcon icon={faBook} className="icon" /> Your Library
+        <FontAwesomeIcon icon={faBook} className="icon" /> My Personal Library
       </Link>
       
       <Link to="/live-radio">
-        <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> Concerts
+        <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> FanBase
       </Link>
       
       <Link to="/playlist">
@@ -52,9 +58,7 @@ function SideNav() {
         <FontAwesomeIcon icon={faHeart} className="icon" /> Liked
       </Link>
       
-      <Link to="/podcasts">
-        <FontAwesomeIcon icon={faHeart} className="icon" /> Podcasts
-      </Link> 
+     
     </div>
   );
 }

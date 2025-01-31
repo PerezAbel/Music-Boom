@@ -1,83 +1,69 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const defaultImages = [
-  'https://cdn.britannica.com/65/257465-050-7891B2A8/Rapper-Cardi-B-at-2019-Met-gala.jpg',
-  'https://d.newsweek.com/en/full/2344469/2024-grammys-jay-z.jpg?w=1200&f=75d4c279df49e11c749e1f0b9753e2fd',
-  'https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/JBF5NPFZ6JFY3OVXUMGNOKVAI4.jpg'
-];   
+  "https://i8.amplience.net/i/naras/2025_grammys_nominations_67_grammy_awards_Nom-Watch-Hero_1644x925%202",
+];
 
-// const defaultOverlayText = [
-//   "Delicious Meals Await You",
-//   "Experience Fine Dining Like Never Before",
-//   "Convenient and Quick Food Delivery"
-// ];
-
+const grammyTrailer =
+  "https://www.example.com/grammy-awards-trailer.mp4"; // Replace with the actual Grammy trailer URL
 
 function ImageDisplay({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    if (!images || images.length === 0) return; // Avoid setting interval if no images
+    if (!images || images.length === 0) return;
+
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000); // Change slide every 3 seconds
+      setShowVideo((prev) => !prev); // Toggle between image and video
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
   }, [images]);
 
-  if (!images || images.length === 0) {
-    return <div>No images to display</div>;
-  }
-
   return (
-    <div className="slider-container" style={{ position: 'relative', overflow: 'hidden' }}>
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt={`Slide ${index + 1}`}
-          style={{
-            display: index === currentImageIndex ? 'block' : 'none',
-            width: '100%',
-            height: '900px', 
-            objectFit: 'cover',
-            // filter: 'blur(8px)', // Apply blur effect
-          }}
-        />
-      ))}
-      {/* Overlay content */}
-      <div
+    <div
+      className="slider-container"
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        width: "100%",
+        height: "900px",
+      }}
+    >
+      {/* Image */}
+      <img
+        src={images[currentImageIndex]}
+        alt="Grammy Awards"
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',    
-          transform: 'translate(-50%, -50%)',
-          textAlign: 'center',
-          color: '#fff',
-          zIndex: 2,
+          width: "100%",
+          height: "900px",
+          objectFit: "cover",
+          opacity: showVideo ? 0 : 1,
+          transition: "opacity 2s ease-in-out",
+          position: "absolute",
+          top: 0,
+          left: 0,
         }}
-      >
-        {/* <h1 style={{ fontSize: '3rem', marginBottom: '20px' }}>Welcome to Foodie Paradise</h1>
-        <p style={{ fontSize: '1.5rem', marginBottom: '30px' }}>
-          Discover delicious meals and unforgettable dining experiences.
-        </p> */}
-        {/* <button
-          style={{
-            padding: '10px 20px',
-            fontSize: '1.2rem',
-            backgroundColor: '#228B22',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-          onClick={() => alert('Explore Now!')}
-        >
-          Explore Now                   
-        </button> */}
-      </div>
+      />
+
+      {/* Video */}
+      <video
+        src={grammyTrailer}
+        autoPlay
+        loop
+        muted
+        style={{
+          width: "100%",
+          height: "900px",
+          objectFit: "cover",
+          opacity: showVideo ? 1 : 0,
+          transition: "opacity 2s ease-in-out",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+      />
     </div>
   );
 }
