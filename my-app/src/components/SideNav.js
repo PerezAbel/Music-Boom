@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHeart, faChartBar, faFireFlameCurved, faClock, faBook, faBroadcastTower, faMusic, faCaretDown, faCaretUp, faFeather } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-function SideNav() {
+function SideNav() {     
+
+  
  
   return (
     <div className="sidenav">
@@ -34,19 +36,21 @@ function SideNav() {
       
       <Link to="/charts">
         <FontAwesomeIcon icon={faChartBar} className="icon" /> New & Trending
+      </Link>   
+
+      <Link to="/mylibrary">
+        <FontAwesomeIcon icon={faBook} className="icon" /> My Library
       </Link>
       
       
       
-      <Link to="/watch-later">
+      {/* <Link to="/watch-later">
         <FontAwesomeIcon icon={faClock} className="icon" /> Watch Later
-      </Link>
+      </Link> */}
       
-      <Link to="/your-library">
-        <FontAwesomeIcon icon={faBook} className="icon" /> My Personal Library
-      </Link>
       
-      <Link to="/live-radio">
+      
+      <Link to="/fanbase">
         <FontAwesomeIcon icon={faBroadcastTower} className="icon" /> FanBase
       </Link>
       
@@ -54,10 +58,10 @@ function SideNav() {
         <FontAwesomeIcon icon={faMusic} className="icon" /> Creators Journey
       </Link>
       
-      <Link to="/liked">
+      {/* <Link to="/liked">
         <FontAwesomeIcon icon={faHeart} className="icon" /> Liked
       </Link>
-      
+       */}
      
     </div>
   );

@@ -10,11 +10,11 @@ import Artists from './components/Artists';
 import Charts from './components/Charts';
 import Podcasts from './components/Podcasts';
 import WatchLater from './components/WatchLater';
-import YourLibrary from './components/YourLibrary';
+// import YourLibrary from './components/YourLibrary';
 import Trending from './components/Trending';
-import Liked from './components/Liked';
+import MyLibrary from './components/MyLibrary';
 import Genres from './components/Genres';
-import LiveRadio from './components/LiveRadio';    
+import FanBase from './components/FanBase';    
 import Playlist from './components/Playlist';
 
 function App() {
@@ -54,15 +54,19 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artists" element={<Artists artists={artists}/>} />
-            <Route path="/trending" element={<Trending />} />
-            <Route path="/charts" element={<Charts />} />
             <Route path="/genres" element={<Genres genres={genres} />} />
-            <Route path="/watchlater" element={<WatchLater />} />
-            <Route path="/yourlibrary" element={<YourLibrary />} />
-            <Route path="/liveradio" element={<LiveRadio />} />
-            <Route path="/playlist" element={<Playlist />} />
-            <Route path="/liked" element={<Liked />} />
             <Route path="/podcasts" element={<Podcasts podcasts={podcasts}/>} />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/charts" element={<Charts />} />  
+            <Route path="/mylibrary" element={<MyLibrary />} />  
+            <Route path="/fanbase" element={<FanBase />} />
+            <Route path="/playlist" element={<Playlist />} />
+        
+            {/* <Route path="/watchlater" element={<WatchLater />} /> */}
+            {/* <Route path="/yourlibrary" element={<YourLibrary />} /> */}
+            
+           
+          
           </Routes>
         </Router> 
       </header>

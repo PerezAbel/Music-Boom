@@ -1,13 +1,13 @@
 import React from 'react';  
 
 
-function Liked() {
+function FanBase() {
   return (  
     <>  
-    <h1>Liked</h1>
+    <h1>FanBase</h1>
     </>
 
   );
 }
 
-export default Liked;
+export default FanBase;
