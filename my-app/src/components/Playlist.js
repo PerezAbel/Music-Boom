@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";    
-import '../css/Playlist.css';
+import '../css/Playlist.css';  
+import SearchBar from './SearchBar'; // Import the SearchBar component
+import Footer from './Footer';
 
 const defaultImages = [
   "https://dsd-guide.com/sites/default/files/images/blogs/Female-performer-songs-in-audio-recording-studioNomad_Souls.jpg",
@@ -20,8 +22,9 @@ function ImageDisplay({ images }) {
   }, [images]);
 
   return (   
-    <div className="Playlist-page">
-   
+    <div className="Playlist-page">  
+    <SearchBar/>
+       
       <div
         className="slider-container"
         style={{
@@ -52,18 +55,22 @@ function ImageDisplay({ images }) {
         className="Playlist-container"
         style={{
           display: "flex",
-          justifyContent: "center",
-          gap: "20px",
+          justifyContent: "center",  
           marginTop: "20px",
+          gap: "20px",
+          marginTop: "40px", 
+          marginBottom: "40px" ,
         }}
       >
         <div
-          className="Playlist"
+          className="Playlist-card"
           style={{
-            width: "300px",
-            padding: "20px",
+            width: "700px",  
+            height: "700px",  
+            paiding: "10px",
             backgroundColor: "white",
-            borderRadius: "10px",
+            borderRadius: "10px",   
+          
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             textAlign: "center",
           }}      
@@ -71,16 +78,19 @@ function ImageDisplay({ images }) {
           <img 
             src="https://fresh50.com/wp-content/uploads/2020/08/images2638-5f43b96a21d0f.jpg" 
             alt="Record Label" 
-            style={{ width: "100%", borderRadius: "10px", marginBottom: "10px" }} 
+            
           />
-          <h3>Join a Record Label</h3>
-          <p>Explore opportunities to sign with top music labels.</p>
+          <h3>Start Your Music Carrer</h3>
+          <p>Get the best tools and tutorials to start composing today, explore opportunities to sign with top music labels & create a platform where ypu post music for others to listen and enjoy
+          </p>  
+          <button> Get Started </button>
         </div>
         <div
           className="Playlist"
           style={{
-            width: "300px",
-            padding: "20px",
+            width: "700px", 
+            height: "700px",
+            
             backgroundColor: "white",
             borderRadius: "10px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -90,14 +100,19 @@ function ImageDisplay({ images }) {
           <img 
             src="https://t4.ftcdn.net/jpg/06/35/14/93/360_F_635149317_T9CWM1j0wlxu49MASHflvkwXlIzZdh8a.jpg" 
             alt="Compose Music" 
-            style={{ width: "100%", borderRadius: "10px", marginBottom: "10px" }} 
+            
           />
-          <h3>Compose Your Own Music</h3>
-          <p>Get the best tools and tutorials to start composing today.</p>
+          <h3>Start Your Own Podcast</h3>
+          <p>Get an Opportunity to create a platform where poeople share experieneces and inspire people and develop relationshps with hard-to-reach people.  </p>
+          <button> Get Started </button>
         </div>
-      </div>
-      </div>
-  );
+      </div>  
+      <Footer/>
+      </div>  
+
+      
+  ); 
+  
 }
 
 // Default prop to ensure 'images' is never undefined

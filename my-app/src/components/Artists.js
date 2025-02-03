@@ -91,24 +91,10 @@ const imageStyle = {
     return <div>Loading...</div>;   
 
 
-
-
-  }   
-
-
-
+  }  
   
 
   return (    
-
-
-    
-    
-
-
-
-
-
 
 
 
