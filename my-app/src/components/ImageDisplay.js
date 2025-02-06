@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const defaultImages = [
   "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBsaXN0ZW5pbmclMjB0byUyMG11c2ljfGVufDB8fDB8fHww",
-];
+  "https://media.gq-magazine.co.uk/photos/6629390c665e4051c2738957/16:9/w_1920,h_1080,c_limit/Indie_albums_HP.jpg",
+
+]; 
 
 // const grammyTrailer =
 //   "https://www.example.com/grammy-awards-trailer.mp4"; // Replace with the actual Grammy trailer URL
@@ -28,7 +30,7 @@ function ImageDisplay({ images }) {
         position: "relative",
         overflow: "hidden",
         width: "100%",
-        height: "900px",
+        height: "800px",
       }}
     >
       {/* Image */}

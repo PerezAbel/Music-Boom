@@ -44,7 +44,7 @@ function PopularRadio() {
  
   return (
     <div>
-      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Featured Artists</h2>
+      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Podcasts</h2>
       <div className="card-container">   
         {cardsData.map((card, index) => (    
           <div key={index} className="card">

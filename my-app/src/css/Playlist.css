@@ -10,14 +10,14 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
 .Playlist-card,
 .Playlist {
   width: 400px;
-  background-color: #333;
+  background-color: rgba(134, 128, 128, 0.938);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -42,7 +42,10 @@
 .Playlist .content {
   padding: 20px;
 }
-
+ 
+h1{
+  align-items: center;
+}
 h3 {
   font-size: 22px;
   font-weight: bold;

@@ -6,6 +6,7 @@ import Footer from './Footer';
 const defaultImages = [
   "https://dsd-guide.com/sites/default/files/images/blogs/Female-performer-songs-in-audio-recording-studioNomad_Souls.jpg",
   "https://cdn.prod.website-files.com/5fac161927bf86485ba43fd0/6470607db5ddc9c102ef4a14_How-to-Start-a-Podcast-(1).jpeg",
+  "https://i.ytimg.com/vi/PohpFZZ-bMI/maxresdefault.jpg",
 ];
 
 function ImageDisplay({ images }) {
@@ -31,7 +32,7 @@ function ImageDisplay({ images }) {
           position: "relative",
           overflow: "hidden",
           width: "100%",
-          height: "900px",
+          height: "800px",
         }}
       >
         {/* Image */}
@@ -40,15 +41,18 @@ function ImageDisplay({ images }) {
           alt="Grammy Awards"
           style={{
             width: "100%",
-            height: "900px",
-            objectFit: "cover",
+            height: "800px",
+            objectFit: "cover",  
+            marginBottom:'40px',
             transition: "opacity 2s ease-in-out",
             position: "absolute",
             top: 0,
             left: 0,
           }}  
         />
-      </div>
+      </div>  
+{/* 
+      <h1>START YOUR JOURNEY</h1> */}
       
       {/* Container with Two Cards */}
       <div
@@ -56,10 +60,9 @@ function ImageDisplay({ images }) {
         style={{
           display: "flex",
           justifyContent: "center",  
-          marginTop: "20px",
           gap: "20px",
-          marginTop: "40px", 
-          marginBottom: "40px" ,
+          marginTop: '30px',
+          marginBottom: "30px" ,
         }}
       >
         <div
@@ -68,7 +71,7 @@ function ImageDisplay({ images }) {
             width: "700px",  
             height: "700px",  
             paiding: "10px",
-            backgroundColor: "white",
+            backgroundColor: "rgba(163, 158, 158, 0.58);",
             borderRadius: "10px",   
           
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -90,8 +93,7 @@ function ImageDisplay({ images }) {
           style={{
             width: "700px", 
             height: "700px",
-            
-            backgroundColor: "white",
+            backgroundColor: "rgba(163, 158, 158, 0.58)",
             borderRadius: "10px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             textAlign: "center",
@@ -104,7 +106,9 @@ function ImageDisplay({ images }) {
           />
           <h3>Start Your Own Podcast</h3>
           <p>Get an Opportunity to create a platform where poeople share experieneces and inspire people and develop relationshps with hard-to-reach people.  </p>
+        
           <button> Get Started </button>
+
         </div>
       </div>  
       <Footer/>
@@ -120,4 +124,6 @@ ImageDisplay.defaultProps = {
   images: defaultImages,
 };   
 
-export default ImageDisplay;
+export default ImageDisplay;   
+
+
