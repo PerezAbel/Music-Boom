@@ -150,7 +150,7 @@
 
 import React, { useState, useEffect } from 'react';
 import '../css/Artists.css';
-import SearchBar from './SearchBar'; 
+import SearchBar from './NavBar'; 
 import Footer from './Footer';      
 
 

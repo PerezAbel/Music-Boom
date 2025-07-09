@@ -156,7 +156,7 @@
 
 import React, { useState, useEffect } from 'react';
 import '../css/Podcasts.css';
-import SearchBar from './SearchBar'; 
+import SearchBar from './NavBar'; 
 import Footer from './Footer';      
 
 

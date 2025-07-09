@@ -1,0 +1,15 @@
+.Main {  
+    background: 
+        /* Dark purple gradient at top */
+        linear-gradient(to bottom, rgba(34, 21, 47, 0.95) 0%, rgba(34, 21, 47, 0.4) 15%, transparent 30%),
+        
+        /* Dark purple gradient at bottom */
+        linear-gradient(to top, rgba(34, 21, 47, 0.95) 0%, rgba(34, 21, 47, 0.4) 15%, transparent 30%),
+        
+        /* Main image */
+        url('https://wallpapercat.com/w/full/5/d/4/195304-3000x2000-desktop-hd-lana-del-rey-wallpaper-photo.jpg') center/cover no-repeat;
+    
+    background-attachment: fixed;
+    min-height: 100vh;   
+    width: 100%;
+}
