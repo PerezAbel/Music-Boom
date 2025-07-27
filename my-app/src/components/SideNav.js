@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/SideNav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -13,57 +13,86 @@ import { Link } from 'react-router-dom';
 function SideNav() {
   const [expanded, setExpanded] = useState(true);
   const [showLibrary, setShowLibrary] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth <= 768) {
+        setExpanded(false); // Collapse by default on mobile
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call once to set initial state
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleSideNav = () => {
-    setExpanded(!expanded);
+    if (!isMobile) {
+      setExpanded(!expanded);
+    }
   };
 
   const toggleLibrary = () => {
-    setShowLibrary(!showLibrary);
+    if (isMobile) {
+      // On mobile, clicking anywhere should toggle the library
+      setShowLibrary(!showLibrary);
+    } else if (expanded) {
+      // On desktop, only toggle if expanded
+      setShowLibrary(!showLibrary);
+    }
   };
 
   return (
     <div className={`sidenav ${expanded ? 'expanded' : 'collapsed'}`}>
-      <div className="sidenav-header">
-        <FontAwesomeIcon icon={faFeather} className="logo-icon" />
-        {expanded && <span className="logo-text">Melodify</span>}
-      </div>
+      {!isMobile && (
+        <div className="sidenav-header">
+          <FontAwesomeIcon icon={faFeather} className="logo-icon" />
+          {expanded && <span className="logo-text">Melodify</span>}
+        </div>
+      )}
 
       <div className="sidenav-section">
-        {expanded && <div className="section-title">MENU</div>}
+        {!isMobile && expanded && <div className="section-title">MENU</div>}
         <Link to="/" className="nav-link">
           <FontAwesomeIcon icon={faHome} className="icon" />
-          {expanded && <span>Explore</span>}
+          {(!isMobile && expanded) && <span>Explore</span>}
         </Link>
         <Link to="/artists" className="nav-link">
           <FontAwesomeIcon icon={faMicrophone} className="icon" />
-          {expanded && <span>Artists</span>}
+          {(!isMobile && expanded) && <span>Artists</span>}
         </Link>
         <Link to="/genres" className="nav-link">
           <FontAwesomeIcon icon={faCompactDisc} className="icon" />
-          {expanded && <span>Albums</span>}
+          {(!isMobile && expanded) && <span>Albums</span>}
         </Link>
         <Link to="/podcasts" className="nav-link">
           <FontAwesomeIcon icon={faBroadcastTower} className="icon" />
-          {expanded && <span>Genres</span>}
+          {(!isMobile && expanded) && <span>Genres</span>}
         </Link>
-        <Link to="/trending" className="nav-link">
-          <FontAwesomeIcon icon={faFireFlameCurved} className="icon" />
-          {expanded && <span>Trending</span>}
-        </Link>
-        <Link to="/concerts" className="nav-link">
-          <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
-          {expanded && <span>Concerts</span>}
-        </Link>
+        {!isMobile && (
+          <>
+            <Link to="/trending" className="nav-link">
+              <FontAwesomeIcon icon={faFireFlameCurved} className="icon" />
+              {expanded && <span>Trending</span>}
+            </Link>
+            <Link to="/concertspage" className="nav-link">
+              <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
+              {expanded && <span>Concerts</span>}
+            </Link>
+          </>
+        )}
       </div>
 
       <div className="sidenav-section">
-        {expanded && <div className="section-title">LIBRARY</div>}
+        {!isMobile && expanded && <div className="section-title">LIBRARY</div>}
         <div className="nav-link library-header" onClick={toggleLibrary}>
           <FontAwesomeIcon icon={faBook} className="icon" />
-          {expanded && (
+          {(!isMobile && expanded) && (
             <>
-              <span>Tunez</span>
+              <span>My Library</span>
               <FontAwesomeIcon 
                 icon={showLibrary ? faCaretUp : faCaretDown} 
                 className="toggle-icon" 
@@ -72,17 +101,17 @@ function SideNav() {
           )}
         </div>
         
-        {showLibrary && expanded && (
+        {showLibrary && (isMobile || expanded) && (
           <div className="library-sublinks">
-            <Link to="/recent" className="nav-link sublink">
+            <Link to="/recent" className="nav-link sublink" onClick={() => isMobile && setShowLibrary(false)}>
               <FontAwesomeIcon icon={faHistory} className="icon" />
               <span>Recent</span>
             </Link>
-            <Link to="/downloads" className="nav-link sublink">
+            <Link to="/downloads" className="nav-link sublink" onClick={() => isMobile && setShowLibrary(false)}>
               <FontAwesomeIcon icon={faDownload} className="icon" />
               <span>Downloads</span>
             </Link>
-            <Link to="/playlists" className="nav-link sublink">
+            <Link to="/playlists" className="nav-link sublink" onClick={() => isMobile && setShowLibrary(false)}>
               <FontAwesomeIcon icon={faListUl} className="icon" />
               <span>My Playlists</span>
             </Link>
@@ -90,17 +119,11 @@ function SideNav() {
         )}
       </div>
 
-      <div className="sidenav-section">
-        {expanded && <div className="section-title">MY TOOLS</div>}
-        <Link to="/settings" className="nav-link">
-          <FontAwesomeIcon icon={faCog} className="icon" />
-          {expanded && <span>Settings</span>}
-        </Link>
-      </div>
-
-      <div className="toggle-button" onClick={toggleSideNav}>
-        <FontAwesomeIcon icon={expanded ? faCompress : faExpand} />
-      </div>
+      {!isMobile && (
+        <div className="toggle-button" onClick={toggleSideNav}>
+          <FontAwesomeIcon icon={expanded ? faCompress : faExpand} />
+        </div>
+      )}
     </div>
   );
 }

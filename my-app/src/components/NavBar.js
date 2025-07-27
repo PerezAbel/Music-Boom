@@ -23,7 +23,7 @@ function Navbar() {
   ];
 
   const navLinks = [
-    { name: "Music", },
+    { name: "All", },
     { name: "Live", },
     { name: "Podcast", },
     { name: "Socilize", },   

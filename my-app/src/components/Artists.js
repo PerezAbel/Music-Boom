@@ -329,24 +329,10 @@ function Artists() {
     return (    
 
 <div className="Gmain">
-      <SearchBar onSearch={handleSearch} />    
+      
 
 
-       <div className="slider-container">
-       {images.map((image, index) => (
-      <img
-        key={index}
-        src={image}
-        alt={`Slide ${index + 1}`}
-        style={{
-          display: index === currentImageIndex ? 'block' : 'none',
-          width: '100%', 
-          height: '800px', 
-          objectFit: 'cover',   
-          marginBottom: '30px'
-        }}
-      />
-    ))}  
+     
         
           <div className="Artists-container">
                 {filteredArtists.map((item) => (
@@ -368,9 +354,8 @@ function Artists() {
             <Footer />  
            
         </div>  
-        </div>
+
     );
 }
 
 export default Artists;
-

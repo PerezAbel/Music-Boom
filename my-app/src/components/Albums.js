@@ -1,63 +1,80 @@
-import React from 'react';
+import React from 'react';  
+import '../css/Music.css';
+import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-
-function Albums() {
+function Music() {
   const cardsData = [
     {
-      title: 'Lfystyl',
-      text: 'Yeat',
-      imageUrl: 'https://media.pitchfork.com/photos/65dcad7c49d75ec68d09c8fa/1:1/w_450%2Cc_limit/yeat-2093.jpg',
-      link: ''
+      title: 'Chris Brown',
+      imageUrl: 'https://s1.ticketm.net/dam/a/c02/93faea5e-ee33-411f-a8e6-6df0bb884c02_RETINA_PORTRAIT_3_2.jpg',
+      details: 'R&B superstar with multiple Grammy awards'
     },
     {
-      title: 'Country',
-      text: 'Beyonce',
-      imageUrl: 'https://assets.teenvogue.com/photos/65f9caf030fe5f7e3b08d294/16:9/w_2560%2Cc_limit/GJC5ZPXXIAAPfLA.jpeg',
-      link: '#'
+      title: 'Kendrick Lamar',
+      imageUrl: "https://images6.alphacoders.com/909/909094.jpg",
+      details: 'Pulitzer Prize-winning rap artist and lyricist'
     },
     {
-      title: 'Heinz',
-      text: 'Rema.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Rema_-_Heis.png',
-      link: '#'
+      title: 'Ariana Grande',
+      imageUrl: 'https://i.pinimg.com/236x/0e/dc/58/0edc58bdb4ab0a333ebd396550c75a32.jpg',
+      details: 'Pop sensation with a four-octave vocal range'
     },
     {
-      title: 'Blue lips',
-      text: 'ScHoolboy Q',
-      imageUrl: 'https://i.scdn.co/image/ab67616d0000b273454a4fb74aa36c7cb57b9153',
-      link: '#'
+      title: 'Coldplay',
+      imageUrl: 'https://artist99.cdn107.com/f7d/f7df8504d3756b4052c381941d684a51_xl.jpg',
+      details: 'British rock band known for anthemic hits'
     },
     {
-      title: 'Born in the Wild',
-      text: 'Tems',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/en/8/87/Tems_-_Born_in_the_Wild_album_cover.jpg',
-      link: '#'
+      title: 'The Weeknd',
+      imageUrl: 'https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg',
+      details: 'Canadian singer blending R&B and pop with dark themes'
     }, 
     {
-      title: 'We dont trust you',
-      text: 'Future, Metro',
-      imageUrl: 'https://i.scdn.co/image/ab67616d0000b273a46b07c291e6dfdee13b3ee8',
-      link: '#'
-    }
+      title: 'Future',
+      imageUrl: 'https://static.standard.co.uk/2024/05/08/11/59/Future_3vqmbcm4.jpeg?width=1200&auto=webp&quality=75',
+      details: 'Influential trap artist and prolific hitmaker'
+    },
   ];
 
- 
+  const scrollLeft = () => {
+    const container = document.querySelector('.card-container');
+    container.scrollBy({ left: -200, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    const container = document.querySelector('.card-container');
+    container.scrollBy({ left: 200, behavior: 'smooth' });
+  };
+
   return (
-    <div>
-      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Popular Albums</h2>
-      <div className="card-container">   
-        {cardsData.map((card, index) => (    
-          <div key={index} className="card">
-            <img src={card.imageUrl} className="card-img"  />    
-            <div className="card-title">{card.title}</div> {/* Artist Name */}
-            <button className="play-button" onClick={() => console.log()}>
+    <div className="music-section">
+      <h2 style={{ textAlign: 'left', color:'#FFFFFF' }}>Featured Artists</h2>
+      <div className="scroll-wrapper">
+        <div className="card-container">   
+          {cardsData.map((card, index) => (    
+            <div key={index} className="card">
+              <span className="groovora-tag">
+                <FaMusic style={{ marginRight: 4 }} />
+                Groovora
+              </span>
+              <img src={card.imageUrl} className="card-img" alt={card.title} />    
+              <div className="card-title">{card.title}</div>
+              <div className="card-details">{card.details}</div>
+              <button className="play-button" onClick={() => console.log(`Playing ${card.title}`)}>
                 ▶
-            </button>         
-          </div>
-        ))}
+              </button>         
+            </div>
+          ))}
+        </div>
+        <button className="scroll-button left" onClick={scrollLeft}>
+          <FaChevronLeft />
+        </button>
+        <button className="scroll-button right" onClick={scrollRight}>
+          <FaChevronRight />
+        </button>
       </div>
     </div>
   );
 }
 
-export default Albums;  
+export default Music;   

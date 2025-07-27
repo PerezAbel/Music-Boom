@@ -1,21 +1,22 @@
 import './App.css';  
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';   
-
-
+import ConcertsPage from './components/ConcertsPage';
+import NavBar from './components/NavBar';
 /* SideNavPages */
 import SideNav from './components/SideNav';
 import Home from './components/Home';
 import Artists from './components/Artists';
-import Charts from './components/Charts';
+import Charts from './components/Concerts';
 import Podcasts from './components/Podcasts';
-import WatchLater from './components/WatchLater';
+import WatchLater from './components/ConcertsPage';
 // import YourLibrary from './components/YourLibrary';
 import Trending from './components/Trending';
-import MyLibrary from './components/MyLibrary';
+// import MyLibrary from './components/MyLibrary';
 import Genres from './components/Genres';
 import FanBase from './components/FanBase';    
 import Playlist from './components/Playlist';
+
 
 function App() {
   const [genres, setGenres] = useState([]);
@@ -47,9 +48,10 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App"> 
+      <NavBar/> 
       <header className="App-header">
-        <Router>   
+        <Router>          
           <SideNav />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -57,8 +59,8 @@ function App() {
             <Route path="/genres" element={<Genres genres={genres} />} />
             <Route path="/podcasts" element={<Podcasts podcasts={podcasts}/>} />
             <Route path="/trending" element={<Trending />} />
-            <Route path="/charts" element={<Charts />} />  
-            <Route path="/mylibrary" element={<MyLibrary />} />  
+            {/* <Route path="/charts" element={<Charts />} />   */}
+            <Route path="/concertspage" element={<ConcertsPage />} />  
             <Route path="/fanbase" element={<FanBase />} />
             <Route path="/playlist" element={<Playlist />} />
         
@@ -68,7 +70,7 @@ function App() {
            
           
           </Routes>
-        </Router> 
+        </Router>  
       </header>
     </div>
   );

@@ -1,28 +1,30 @@
 import React from "react";  
-import NavBar from './NavBar';
 import Music from './Music';
 import Albums from './Albums';
-import PopularRadio from './PopularRadio';
+import PopularRadio from './PopularRadio'; 
+import Concerts from './Concerts';
 import Workout from './Workout';
 import Footer from './Footer';   
-// import ImageDisplay from './ImageDisplay';      
+import ImageSlider from './ImageSlider';      
 import '../css/Home.css'
 
-function Home() {
+
+function Home() {  
+
     return (  
       <>    
         <div className='Main'>
-            <NavBar />      
-            {/* <ImageDisplay />   */}
+            <ImageSlider />  
             <Music />
-            <Albums />
+            <Albums />   
+            <Concerts/>
             <PopularRadio />
             <Workout />
             <Footer />
           </div>
       </>
     
-      
+   
     );
   }
   

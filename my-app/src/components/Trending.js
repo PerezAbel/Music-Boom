@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';  
-import SearchBar from './NavBar';
+import Footer from './Footer';
 
 
 function Trending() {  
@@ -76,7 +76,7 @@ function Trending() {
   return (   
 
 <div className="Gmain">
-      <SearchBar/>
+     
       <div className="slider-container">
     {images.map((image, index) => (
       <img
@@ -92,7 +92,8 @@ function Trending() {
         }}
       />
     ))}
-  </div> 
+  </div>   
+  <Footer/>
   </div>
   
   );

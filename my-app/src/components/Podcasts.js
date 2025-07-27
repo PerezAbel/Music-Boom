@@ -264,8 +264,7 @@ function Podcasts() {
     return (    
 
 <div className="Gmain">
-      <SearchBar onSearch={handleSearch} />    
-
+    
 
        <div className="slider-container">
        {images.map((image, index) => (
