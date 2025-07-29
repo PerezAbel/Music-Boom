@@ -16,6 +16,7 @@ import Trending from './components/Trending';
 import Genres from './components/Genres';
 import FanBase from './components/FanBase';    
 import Playlist from './components/Playlist';
+import Albums from './components/Albums';
 
 
 function App() {
@@ -58,9 +59,9 @@ function App() {
             <Route path="/artists" element={<Artists artists={artists}/>} />
             <Route path="/genres" element={<Genres genres={genres} />} />
             <Route path="/podcasts" element={<Podcasts podcasts={podcasts}/>} />
-            <Route path="/trending" element={<Trending />} />
+            <Route path="/albums" element={<Albums />} />
             {/* <Route path="/charts" element={<Charts />} />   */}
-            <Route path="/concertspage" element={<ConcertsPage />} />  
+            <Route path="/trending" element={<Trending />} />  
             <Route path="/fanbase" element={<FanBase />} />
             <Route path="/playlist" element={<Playlist />} />
         

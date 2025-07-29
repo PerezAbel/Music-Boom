@@ -1,4 +1,10 @@
-.music-section {
+
+
+
+
+.music-section { 
+  background-color: #181818;  
+  width: 100%; 
   position: relative;
   padding: 0 40px;
 }

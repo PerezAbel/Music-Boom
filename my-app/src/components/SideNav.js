@@ -64,13 +64,17 @@ function SideNav() {
           <FontAwesomeIcon icon={faMicrophone} className="icon" />
           {(!isMobile && expanded) && <span>Artists</span>}
         </Link>
-        <Link to="/genres" className="nav-link">
-          <FontAwesomeIcon icon={faCompactDisc} className="icon" />
-          {(!isMobile && expanded) && <span>Albums</span>}
-        </Link>
-        <Link to="/podcasts" className="nav-link">
+        <Link to="/genres" className="nav-link">  
           <FontAwesomeIcon icon={faBroadcastTower} className="icon" />
           {(!isMobile && expanded) && <span>Genres</span>}
+        </Link>
+        {/* <Link to="/podcasts" className="nav-link"> 
+          <FontAwesomeIcon icon={faCompactDisc} className="icon" /> 
+          {(!isMobile && expanded) && <span>Albums</span>}
+        </Link> */} 
+        <Link to="/albums" className="nav-link"> 
+          <FontAwesomeIcon icon={faCompactDisc} className="icon" /> 
+          {(!isMobile && expanded) && <span>Albums</span>}
         </Link>
         {!isMobile && (
           <>

@@ -1,5 +1,6 @@
 import React from 'react';  
-import '../css/Music.css';
+import '../css/Music.css'; 
+
 import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 function Music() {

@@ -1,361 +1,331 @@
-// import React, { useState, useEffect } from 'react';
-// import '../css/Artists.css';
-// import SearchBar from './SearchBar'; // Import the SearchBar component
-// import Footer from './Footer';
+import React from 'react';
+import '../css/Music.css'; 
 
+import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-// function Artists({ artists = [] }) {    
+function Music() {
+  // Categories data
+  const categories = [
+    {
+      title: 'Top 10 Artists',
+      artists: [
+        {
+          title: 'Taylor Swift',
+          imageUrl: 'https://publish.purewow.net/wp-content/uploads/sites/2/2024/10/taylor-swift-hub.jpg?resize=720%2C780',
+          details: 'Global pop phenomenon and songwriter'
+        },
+        {
+          title: 'Drake',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg?w=942&h=623&crop=1',
+          details: 'Chart-topping rap superstar'
+        },
+        {
+          title: 'BTS',
+          imageUrl: 'https://wallpapers.com/images/featured/bts-pictures-0ynzwrpbewd63qlf.jpg',
+          details: 'Record-breaking K-pop group'
+        },
+        {
+          title: 'Beyoncé',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2022/06/Beyonce-cr-Courtesy-of-Parkwood-Entertainment-press-2022-billboard-1548.jpg',
+          details: 'Queen of R&B and pop'
+        },
+        {
+          title: 'The Weeknd',
+          imageUrl: 'https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg',
+          details: 'Canadian singer blending R&B and pop'
+        },
+        {
+          title: 'Bad Bunny',
+          imageUrl: 'https://akns-images.eonline.com/eol_images/Entire_Site/2020410/rs_819x1024-200510121755-92516570_1511618529020001_4571246911942488617_n.jpg?fit=around%7C819:1024&output-quality=90&crop=819:1024;center,top',
+          details: 'Latin trap and reggaeton superstar'
+        },
+        {
+          title: 'BTS',
+          imageUrl: 'https://wallpapers.com/images/featured/bts-pictures-0ynzwrpbewd63qlf.jpg',
+          details: 'Record-breaking K-pop group'
+        },
+        {
+          title: 'Beyoncé',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2022/06/Beyonce-cr-Courtesy-of-Parkwood-Entertainment-press-2022-billboard-1548.jpg',
+          details: 'Queen of R&B and pop'
+        },
+        {
+          title: 'The Weeknd',
+          imageUrl: 'https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg',
+          details: 'Canadian singer blending R&B and pop'
+        },
+        {
+          title: 'Bad Bunny',
+          imageUrl: 'https://akns-images.eonline.com/eol_images/Entire_Site/2020410/rs_819x1024-200510121755-92516570_1511618529020001_4571246911942488617_n.jpg?fit=around%7C819:1024&output-quality=90&crop=819:1024;center,top',
+          details: 'Latin trap and reggaeton superstar'
+        }
+      ]
+    },
+    {
+      title: 'Afro Artists',
+      artists: [
+        {
+          title: 'Burna Boy',
+          imageUrl: 'https://i.pinimg.com/550x/48/81/89/488189b5f15feb07717a601e8e71db59.jpg',
+          details: 'Afrofusion pioneer from Nigeria'
+        },
+        {
+          title: 'Wizkid',
+          imageUrl: 'https://www.rollingstone.com/wp-content/uploads/2024/11/wizkid-album-review.jpg',
+          details: 'Afrobeats global ambassador'
+        },
+        {
+          title: 'Tems',
+          imageUrl: 'https://wallpapercat.com/w/full/9/d/9/2053854-1707x2560-mobile-hd-tems-singer-background-photo.jpg',
+          details: 'Grammy-winning Nigerian singer'
+        },
+        {
+          title: 'Davido',
+          imageUrl: 'https://i.guim.co.uk/img/media/10470940704403920dd283f0fea8b27bed013eef/0_119_1428_857/master/1428.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0ffc2932bb9a69c0ef29f449132bbc80',
+          details: 'Afrobeats superstar'
+        },
+        {
+          title: 'Ayra Starr',
+          imageUrl: 'https://mixbeep.com/media/singerpics/mixbayra-starkrinlvs.jpg',
+          details: 'Rising Afro-pop sensation'
+        }, 
+        {
+          title: 'Burna Boy',
+          imageUrl: 'https://i.pinimg.com/550x/48/81/89/488189b5f15feb07717a601e8e71db59.jpg',
+          details: 'Afrofusion pioneer from Nigeria'
+        },
+        {
+          title: 'Wizkid',
+          imageUrl: 'https://www.rollingstone.com/wp-content/uploads/2024/11/wizkid-album-review.jpg',
+          details: 'Afrobeats global ambassador'
+        },
+        {
+          title: 'Tems',
+          imageUrl: 'https://wallpapercat.com/w/full/9/d/9/2053854-1707x2560-mobile-hd-tems-singer-background-photo.jpg',
+          details: 'Grammy-winning Nigerian singer'
+        },
+        {
+          title: 'Davido',
+          imageUrl: 'https://i.guim.co.uk/img/media/10470940704403920dd283f0fea8b27bed013eef/0_119_1428_857/master/1428.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0ffc2932bb9a69c0ef29f449132bbc80',
+          details: 'Afrobeats superstar'
+        },
+        {
+          title: 'Ayra Starr',
+          imageUrl: 'https://mixbeep.com/media/singerpics/mixbayra-starkrinlvs.jpg',
+          details: 'Rising Afro-pop sensation'
+        }
+      ]
+    },
+    {
+      title: 'Latin Artists',
+      artists: [
+        {
+          title: 'Bad Bunny',
+          imageUrl: 'https://akns-images.eonline.com/eol_images/Entire_Site/2020410/rs_819x1024-200510121755-92516570_1511618529020001_4571246911942488617_n.jpg?fit=around%7C819:1024&output-quality=90&crop=819:1024;center,top',
+          details: 'Global reggaeton phenomenon'
+        },
+        {
+          title: 'J Balvin',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQICQCfaec5YZU5yJWWvR2rX-0Vkeglw-q5qA&s',
+          details: 'Colombian reggaeton star'
+        },
+        {
+          title: 'Karol G',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2023-11-16_Gala_de_los_Latin_Grammy%2C_15_%28cropped_2%29.jpg/250px-2023-11-16_Gala_de_los_Latin_Grammy%2C_15_%28cropped_2%29.jpg',
+          details: 'Reigning queen of reggaeton'
+        },
+        {
+          title: 'Ozuna',
+          imageUrl: 'https://variety.com/wp-content/uploads/2022/06/1F7A9595.jpg?w=1000&h=563&crop=1',
+          details: 'Puerto Rican trap and reggaeton star'
+        },
+        {
+          title: 'Rosalía',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVlqXeYh_YKZS5nzzM1TTNxAhqdoYxYIiRg&s',
+          details: 'Spanish flamenco-pop innovator'
+        }, 
+        {
+          title: 'Bad Bunny',
+          imageUrl: 'https://akns-images.eonline.com/eol_images/Entire_Site/2020410/rs_819x1024-200510121755-92516570_1511618529020001_4571246911942488617_n.jpg?fit=around%7C819:1024&output-quality=90&crop=819:1024;center,top',
+          details: 'Global reggaeton phenomenon'
+        },
+        {
+          title: 'J Balvin',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQICQCfaec5YZU5yJWWvR2rX-0Vkeglw-q5qA&s',
+          details: 'Colombian reggaeton star'
+        },
+        {
+          title: 'Karol G',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2023-11-16_Gala_de_los_Latin_Grammy%2C_15_%28cropped_2%29.jpg/250px-2023-11-16_Gala_de_los_Latin_Grammy%2C_15_%28cropped_2%29.jpg',
+          details: 'Reigning queen of reggaeton'
+        },
+        {
+          title: 'Ozuna',
+          imageUrl: 'https://variety.com/wp-content/uploads/2022/06/1F7A9595.jpg?w=1000&h=563&crop=1',
+          details: 'Puerto Rican trap and reggaeton star'
+        },
+        {
+          title: 'Rosalía',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVlqXeYh_YKZS5nzzM1TTNxAhqdoYxYIiRg&s',
+          details: 'Spanish flamenco-pop innovator'
+        }
+      ]
+    },
+    {
+      title: 'K-Pop Artists',
+      artists: [
+        {
+          title: 'BTS',
+          imageUrl: 'https://wallpapers.com/images/featured/bts-pictures-0ynzwrpbewd63qlf.jpg',
+          details: 'Global K-pop phenomenon'
+        },
+        {
+          title: 'BLACKPINK',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTGsITjdGcMHW5XID9EIoUxw-hCUEn5C6iog&s',
+          details: 'Record-breaking girl group'
+        },
+        {
+          title: 'TWICE',
+          imageUrl: 'https://rollingstonephilippines.com/wp-content/uploads/2025/05/RSPH-Landscape-2025-05-19T140316325.webp',
+          details: 'Bubblegum pop perfection'
+        },
+        {
+          title: 'Stray Kids',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSRTDcfB50ezp6R5AreIl36SUDHzSCsPDD2w&s',
+          details: 'Self-producing boy group'
+        },
+        {
+          title: 'NewJeans',
+          imageUrl: 'https://i.scdn.co/image/ab6761610000517480668ba2b15094d083780ea9',
+          details: 'Rookie girl group sensation'
+        }, 
+        {
+          title: 'BTS',
+          imageUrl: 'https://wallpapers.com/images/featured/bts-pictures-0ynzwrpbewd63qlf.jpg',
+          details: 'Global K-pop phenomenon'
+        },
+        {
+          title: 'BLACKPINK',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTGsITjdGcMHW5XID9EIoUxw-hCUEn5C6iog&s',
+          details: 'Record-breaking girl group'
+        },
+        {
+          title: 'TWICE',
+          imageUrl: 'https://rollingstonephilippines.com/wp-content/uploads/2025/05/RSPH-Landscape-2025-05-19T140316325.webp',
+          details: 'Bubblegum pop perfection'
+        },
+        {
+          title: 'Stray Kids',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSRTDcfB50ezp6R5AreIl36SUDHzSCsPDD2w&s',
+          details: 'Self-producing boy group'
+        },
+        {
+          title: 'NewJeans',
+          imageUrl: 'https://i.scdn.co/image/ab6761610000517480668ba2b15094d083780ea9',
+          details: 'Rookie girl group sensation'
+        }
+      ]
+    },
+    {
+      title: 'Popular Rappers',
+      artists: [
+        {
+          title: 'Kendrick Lamar',
+          imageUrl: 'https://images6.alphacoders.com/909/909094.jpg',
+          details: 'Pulitzer Prize-winning lyricist'
+        },
+        {
+          title: 'Drake',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg?w=942&h=623&crop=1',
+          details: 'Chart-dominating rap superstar'
+        },
+        {
+          title: 'Travis Scott',
+          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg?q=h_1066,w_1600,x_0,y_0',
+          details: 'Astroworld architect'
+        },
+        {
+          title: 'J. Cole',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
+          details: 'Conscious rap heavyweight'
+        },
+        {
+          title: 'Nicki Minaj',
+          imageUrl: 'https://umusic.co.nz/wp-content/uploads/sites/44/2018/11/nikkiminaj-article-image-2.jpg',
+          details: 'Queen of rap'
+        },
+         {
+          title: 'Kendrick Lamar',
+          imageUrl: 'https://images6.alphacoders.com/909/909094.jpg',
+          details: 'Pulitzer Prize-winning lyricist'
+        },
+        {
+          title: 'Drake',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg?w=942&h=623&crop=1',
+          details: 'Chart-dominating rap superstar'
+        },
+        {
+          title: 'Travis Scott',
+          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg?q=h_1066,w_1600,x_0,y_0',
+          details: 'Astroworld architect'
+        },
+        {
+          title: 'J. Cole',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
+          details: 'Conscious rap heavyweight'
+        },
+        {
+          title: 'Nicki Minaj',
+          imageUrl: 'https://umusic.co.nz/wp-content/uploads/sites/44/2018/11/nikkiminaj-article-image-2.jpg',
+          details: 'Queen of rap'
+        }
+      ]
+    }
+  ];
 
-//   const containerStyle = {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     padding: '20px',
-//     maxWidth: '100%',
-//     margin: '0 auto',
-//     backgroundColor: '#f9f9f9',
-//     borderRadius: '8px',
-//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-// };
-
-// const contentStyle = {
-//     flex: '1 1 60%',
-//     padding: '20px',
-// };
-
-// const heading1Style = {
-//     fontSize: '2.5em',
-//     marginBottom: '20px',
-//     color: '#333',
-// };
-
-// const heading2Style = {
-//     fontSize: '1.8em',
-//     marginBottom: '10px',
-//     color: '#333',
-// };
-
-// const paragraphStyle = {
-//     fontSize: '1.1em',
-//     lineHeight: '1.6',
-//     color: '#666',
-//     marginBottom: '20px',
-// };
-
-// const imageContainerStyle = {
-//     flex: '1 1 40%',
-//     display: 'flex',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     padding: '20px',
-// };
-
-// const imageStyle = {
-//     maxWidth: '100%',
-//     borderRadius: '8px',
-//     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-// };       
-
-//   const images = [
-//         'https://images6.alphacoders.com/133/1337850.jpeg',
-//         'https://images5.alphacoders.com/117/1177528.jpg',
-//         'https://www.billboard.com/wp-content/uploads/2023/07/burna-boy-apple-music-live-2023-billboard-1548.jpg',
-//       ];
-         
-
-//     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    
-//       useEffect(() => {
-//         const interval = setInterval(() => {
-//           setCurrentImageIndex((prevIndex) =>
-//             prevIndex === images.length - 1 ? 0 : prevIndex + 1
-//           );
-//         }, 3000); // Change slide every 3 seconds (adjust as needed)
-    
-//         return () => clearInterval(interval);
-//       }, [images.length]);
-    
-  
-
-
-    
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const handleSearch = (term) => {
-//     setSearchTerm(term);
-//   };
-
-//   const filteredArtists = artists.filter((item) =>
-//     (item.Title && typeof item.Title === 'string' ? item.Title.toLowerCase() : '').includes(searchTerm.toLowerCase())
-//   );
-
-//   if (!filteredArtists.length) {
-//     return <div>Loading...</div>;   
-
-
-//   }  
-  
-
-//   return (    
-
-
-
-//     <div className="Gmain">
-//       <SearchBar data={artists} onSearch={handleSearch} />
-//       <div className="slider-container">
-//     {images.map((image, index) => (
-//       <img
-//         key={index}
-//         src={image}
-//         alt={`Slide ${index + 1}`}
-//         style={{
-//           display: index === currentImageIndex ? 'block' : 'none',
-//           width: '100%', // Change width here (e.g., 80%)
-//           height: '800px', // Change height here (e.g., 300px)
-//           objectFit: 'cover', // Maintain the aspect ratio of the image    
-//           marginBottom: '30px'
-//         }}
-//       />
-//     ))}
-  
-//       <div className="Artists-container">
-//         {filteredArtists.map((item) => (
-//           <div className="Artists" key={item.id}>
-//             <div className="Artists-img" style={{ backgroundImage: `url(${item.imageurl})` }}>
-//               <button className="play-button" onClick={() => console.log(`Play ${item.Title}`)}>
-//                 ▶
-//               </button>
-//               <div className="Artists-overlay">
-//                 <h5 className="Artists-title">{item.Title}</h5>
-//                 <p className="Artists-text">{item.text}</p>
-//               </div>
-//             </div>  
-           
-//           </div>
-//         ))}  
-//         </div>
-//       </div>
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// export default Artists;
-
-
-
-
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import '../css/Artists.css';
-import SearchBar from './NavBar'; 
-import Footer from './Footer';      
-
-
-function Artists() {    
-  
-   const containerStyle = {
-      display: 'flex',
-      flexWrap: 'wrap',
-      padding: '20px',
-      maxWidth: '100%',
-      margin: '0 auto',
-      backgroundColor: '#f9f9f9',
-      borderRadius: '8px',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  const scrollLeft = (containerId) => {
+    const container = document.getElementById(containerId);
+    container.scrollBy({ left: -200, behavior: 'smooth' });
   };
-  
-  const contentStyle = {
-      flex: '1 1 60%',
-      padding: '20px',
+
+  const scrollRight = (containerId) => {
+    const container = document.getElementById(containerId);
+    container.scrollBy({ left: 200, behavior: 'smooth' });
   };
-  
-  const heading1Style = {
-      fontSize: '2.5em',
-      marginBottom: '20px',
-      color: '#333',
-  };
-  
-  const heading2Style = {
-      fontSize: '1.8em',
-      marginBottom: '10px',
-      color: '#333',
-  };
-  
-  const paragraphStyle = {
-      fontSize: '1.1em',
-      lineHeight: '1.6',
-      color: '#666',
-      marginBottom: '20px',
-  };
-  
-  const imageContainerStyle = {
-      flex: '1 1 40%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: '20px',
-  };
-  
-  const imageStyle = {
-      maxWidth: '100%',
-      borderRadius: '8px',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-  };       
-  
-    const images = [  
 
-      'https://images6.alphacoders.com/133/1337850.jpeg',
-      'https://images5.alphacoders.com/117/1177528.jpg',
-      'https://www.billboard.com/wp-content/uploads/2023/07/burna-boy-apple-music-live-2023-billboard-1548.jpg',
-         
-        ];
-           
-  
-      const [currentImageIndex, setCurrentImageIndex] = useState(0);
-      
-        useEffect(() => {
-          const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) =>
-              prevIndex === images.length - 1 ? 0 : prevIndex + 1
-            );
-          }, 3000); // Change slide every 3 seconds (adjust as needed)
-      
-          return () => clearInterval(interval);
-        }, [images.length]);
-      
-  
-    const Artists = [   
-
-
-      {
-        "id": "1",
-        "Title": "SZA", 
-        "imageurl": "https://4kwallpapers.com/images/wallpapers/sza-american-singer-5k-3840x2160-13774.jpg"
-      },
-      {
-       "id": "2",
-       "Title": "Rema", 
-       "imageurl": "https://www.musicinafrica.net/sites/default/files/styles/article_slider_large/public/images/article/202406/rema-201.jpg?itok=MHoQLHbI"
-     },  
-     {
-       "id": "3",
-       "Title": "Lunay", 
-       "imageurl": "https://www.billboard.com/wp-content/uploads/media/Lunay-press-photo-2019-billboard-1548.jpg"
-     },   
-     {
-       "id": "4",
-       "Title": "The Weekend", 
-       "imageurl": "https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg"
-     },    
-     {
-       "id": "5",
-       "Title": "Tems", 
-       "imageurl": "https://wallpapercat.com/w/full/9/d/9/2053854-1707x2560-mobile-hd-tems-singer-background-photo.jpg"
-     },    
-     {
-       "id": "6",
-       "Title": "Drake", 
-       "imageurl": "https://jusebeauty.co.uk/wp-content/uploads/2024/09/Drakes-New-Hairstyle-942x600.jpg"
-     },   
-     {
-       "id": "7",
-       "Title": "Harry Styles", 
-       "imageurl": "https://media.npr.org/assets/img/2020/02/27/wide-use_hpromophoto_helenepambrun-da307fb79cbc5ff2ea8a395c5a5132c33fb43602.jpg"
-     },    
-     {
-       "id": "8",
-       "Title": "Rose", 
-       "imageurl": "https://mrwallpaper.com/images/thumbnail/fierce-rose-blackpink-fan-art-5bdi0h7t7rorzasa.jpg"
-     },    
-    
-     {
-       "id": "9",
-       "Title": "Kendrick Lamar", 
-       "imageurl": "https://hiphophero.com/static/uploads/5/2024/07/Kendrick-Lamar-2024-Not-Like-Us-Hip-Hop-Hero-1140x855.jpg"
-     } ,
-     {
-       "id":"10",
-       "Title":"Burna Boy", 
-       "imageurl":"https://i.pinimg.com/550x/48/81/89/488189b5f15feb07717a601e8e71db59.jpg"
-     },  
-     {
-       "id": "11",
-       "Title": "Vybez Kartel", 
-       "imageurl": "https://lastfm.freetls.fastly.net/i/u/ar0/10517e79bae9b0cbc1ce67883f7fc1dc.jpg"
-     },   
-     {
-       "id": "12",
-       "Title": "Beyonce", 
-       "imageurl": "https://cdn.britannica.com/59/204159-050-5055F2A9/Beyonce-2013.jpg"
-     },    
-     {
-       "id": "13",
-       "Title": "Guy Penrod", 
-       "imageurl": "https://photos.bandsintown.com/large/11916464.jpeg"
-     },    
-    
-     {
-       "id": "14",
-       "Title": "Jimin", 
-       "imageurl": "https://6.soompi.io/wp-content/uploads/image/20240827201506_Jimin_6e3b3f.jpg?s=900x600&e=t"
-     } ,
-     {
-       "id":"15",
-       "Title":"Chris Browm", 
-       "imageurl":"https://wallpapercg.com/media/ts_orig/23410.webp"
-     } 
-    
-      
-   
-        
-       
-    ];
-   
-    const [searchTerm, setSearchTerm] = useState('');              
-
-    const handleSearch = (term) => {
-        setSearchTerm(term);
-    };
-
-    const filteredArtists = Artists.filter((item) =>
-        item.Title.toLowerCase().includes(searchTerm.toLowerCase())
-    );  
-
-    
-
-    return (    
-
-<div className="Gmain">
-      
-
-
-     
-        
-          <div className="Artists-container">
-                {filteredArtists.map((item) => (
-                    <div className="Artists" key={item.id}>
-                        <div className="Artists-img" style={{ backgroundImage: `url(${item.imageurl})` }}>
-                            <button className="play-button" onClick={() => console.log(`Play ${item.Title}`)}>
-                                ▶
-                            </button>
-                            <div className="Artists-overlay">
-                                <h5 className="Artists-title">{item.Title}</h5>
-                            </div>
-                        </div>
-                    </div> 
-                 
-                ))}   
-                
-            </div> 
-         
-            <Footer />  
-           
-        </div>  
-
-    );
+  return (
+    <div className="music-section">
+      {categories.map((category, index) => (
+        <div key={index} className="category-section">
+          <h2 style={{ textAlign: 'left', color: '#FFFFFF' }}>{category.title}</h2>
+          <div className="scroll-wrapper">
+            <div id={`container-${index}`} className="card-container">
+              {category.artists.map((artist, artistIndex) => (
+                <div key={artistIndex} className="card">
+                  <span className="groovora-tag">
+                    <FaMusic style={{ marginRight: 4 }} />
+                    Groovora
+                  </span>
+                  <img src={artist.imageUrl} className="card-img" alt={artist.title} />
+                  <div className="card-title">{artist.title}</div>
+                  <div className="card-details">{artist.details}</div>
+                  <button className="play-button" onClick={() => console.log(`Playing ${artist.title}`)}>
+                    ▶
+                  </button>
+                </div>
+              ))}
+            </div>
+            <button className="scroll-button left" onClick={() => scrollLeft(`container-${index}`)}>
+              <FaChevronLeft />
+            </button>
+            <button className="scroll-button right" onClick={() => scrollRight(`container-${index}`)}>
+              <FaChevronRight />
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-export default Artists;
+export default Music;
