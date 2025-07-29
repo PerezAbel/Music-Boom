@@ -62,7 +62,7 @@ function App() {
             <Route path="/albums" element={<Albums />} />
             {/* <Route path="/charts" element={<Charts />} />   */}
             <Route path="/trending" element={<Trending />} />  
-            <Route path="/fanbase" element={<FanBase />} />
+            <Route path="/concertspage" element={<ConcertsPage />} />
             <Route path="/playlist" element={<Playlist />} />
         
             {/* <Route path="/watchlater" element={<WatchLater />} /> */}

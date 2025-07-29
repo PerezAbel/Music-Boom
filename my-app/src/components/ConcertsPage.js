@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/ConcertsPage.css'; // We'll create this CSS file next
+import '../css/ConcertsPage.css';
 
 const ConcertsPage = () => {
   const [concerts, setConcerts] = useState([
@@ -8,81 +8,164 @@ const ConcertsPage = () => {
       title: "Electric Dreams Festival",
       artist: "Various Artists",
       date: "2023-08-15",
+      time: "7:00 PM",
       location: "Central Park, New York",
+      country: "USA",
       price: "$75 - $200",
       image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Electronic",
-      isFeatured: true
+      isFeatured: true,
+      ticketsAvailable: 124
     },
     {
       id: 2,
       title: "Rock the City",
       artist: "The Rolling Stones",
       date: "2023-09-22",
+      time: "8:30 PM",
       location: "Madison Square Garden",
+      country: "USA",
       price: "$120 - $350",
       image: "https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Rock",
-      isFeatured: false
+      isFeatured: false,
+      ticketsAvailable: 56
     },
     {
       id: 3,
       title: "Jazz Under the Stars",
       artist: "Diana Krall & Special Guests",
       date: "2023-08-30",
+      time: "9:00 PM",
       location: "Hollywood Bowl, LA",
+      country: "USA",
       price: "$90 - $250",
       image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Jazz",
-      isFeatured: true
+      isFeatured: true,
+      ticketsAvailable: 42
     },
     {
       id: 4,
       title: "Hip Hop Nation",
       artist: "Kendrick Lamar, Travis Scott",
       date: "2023-10-05",
+      time: "8:00 PM",
       location: "Banc of California Stadium",
+      country: "USA",
       price: "$85 - $300",
       image: "https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Hip Hop",
-      isFeatured: false
+      isFeatured: false,
+      ticketsAvailable: 231
     },
     {
       id: 5,
       title: "Classical Nights",
       artist: "New York Philharmonic",
       date: "2023-11-18",
+      time: "6:00 PM",
       location: "Carnegie Hall",
+      country: "USA",
       price: "$65 - $180",
       image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Classical",
-      isFeatured: false
+      isFeatured: false,
+      ticketsAvailable: 89
     },
     {
       id: 6,
       title: "Country Roads",
       artist: "Luke Combs, Miranda Lambert",
       date: "2023-09-10",
+      time: "7:30 PM",
       location: "Nissan Stadium, Nashville",
+      country: "USA",
       price: "$70 - $220",
       image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
       genre: "Country",
-      isFeatured: true
-    }
+      isFeatured: true,
+      ticketsAvailable: 312
+    }, 
+    {
+      id: 6,
+      title: "Country Roads",
+      artist: "Luke Combs, Miranda Lambert",
+      date: "2023-09-10",
+      time: "7:30 PM",
+      location: "Nissan Stadium, Nashville",
+      country: "USA",
+      price: "$70 - $220",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      genre: "Country",
+      isFeatured: true,
+      ticketsAvailable: 312
+    }, 
+    {
+      id: 6,
+      title: "Country Roads",
+      artist: "Luke Combs, Miranda Lambert",
+      date: "2023-09-10",
+      time: "7:30 PM",
+      location: "Nissan Stadium, Nashville",
+      country: "USA",
+      price: "$70 - $220",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      genre: "Country",
+      isFeatured: true,
+      ticketsAvailable: 312
+    },  
+    {
+      id: 6,
+      title: "Country Roads",
+      artist: "Luke Combs, Miranda Lambert",
+      date: "2023-09-10",
+      time: "7:30 PM",
+      location: "Nissan Stadium, Nashville",
+      country: "USA",
+      price: "$70 - $220",
+      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      genre: "Country",
+      isFeatured: true,
+      ticketsAvailable: 312
+    } 
+    
   ]);
 
   const [filter, setFilter] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
+  const [searchType, setSearchType] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
+
+  const genres = [...new Set(concerts.map(concert => concert.genre))];
+  const countries = [...new Set(concerts.map(concert => concert.country))];
+  const locations = [...new Set(concerts.map(concert => concert.location))];
 
   const filteredConcerts = concerts.filter(concert => {
     const matchesFilter = filter === 'all' || concert.genre.toLowerCase() === filter.toLowerCase();
-    const matchesSearch = concert.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          concert.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          concert.location.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesFilter && matchesSearch;
+    
+    if (!searchType) return matchesFilter;
+    
+    switch(searchType) {
+      case 'genre':
+        return matchesFilter && concert.genre.toLowerCase().includes(searchValue.toLowerCase());
+      case 'country':
+        return matchesFilter && concert.country.toLowerCase().includes(searchValue.toLowerCase());
+      case 'location':
+        return matchesFilter && concert.location.toLowerCase().includes(searchValue.toLowerCase());
+      case 'nearby':
+        // In a real app, this would use geolocation
+        return matchesFilter && concert.location.toLowerCase().includes('new york');
+      default:
+        return matchesFilter;
+    }
   });
 
-  const genres = [...new Set(concerts.map(concert => concert.genre))];
+  const handleSearchBy = (type) => {
+    setSearchType(type);
+    setShowSearchDropdown(false);
+    setSearchValue('');
+  };
 
   return (
     <div className="concerts-page">
@@ -91,17 +174,7 @@ const ConcertsPage = () => {
         <p>Find your next unforgettable concert experience</p>
       </header>
 
-      <div className="search-filter-container">
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search concerts, artists, or locations..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <i className="fas fa-search"></i>
-        </div>
-
+      <div className="filter-container">
         <div className="filter-buttons">
           <button 
             className={filter === 'all' ? 'active' : ''}
@@ -118,16 +191,52 @@ const ConcertsPage = () => {
               {genre}
             </button>
           ))}
+          <div className="search-by-container">
+            <button 
+              className="search-by-button"
+              onClick={() => setShowSearchDropdown(!showSearchDropdown)}
+            >
+              Search Concerts By <i className={`fas fa-chevron-${showSearchDropdown ? 'up' : 'down'}`}></i>
+            </button>
+            {showSearchDropdown && (
+              <div className="search-dropdown">
+                <button onClick={() => handleSearchBy('country')}>By Country</button>
+                <button onClick={() => handleSearchBy('location')}>By Location</button>
+                <button onClick={() => handleSearchBy('genre')}>By Genre</button>
+                <button onClick={() => handleSearchBy('nearby')}>Concerts Near You</button>
+              </div>
+            )}
+          </div>
         </div>
+
+        {searchType && (
+          <div className="search-input-container">
+            <input
+              type="text"
+              placeholder={`Search by ${searchType}...`}
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <button 
+              className="clear-search"
+              onClick={() => {
+                setSearchType(null);
+                setSearchValue('');
+              }}
+            >
+              Clear
+            </button>
+          </div>
+        )}
       </div>
 
       <section className="featured-concerts">
         <h2>Featured Concerts</h2>
-        <div className="concert-cards">
+        <div className="concert-cards-container">
           {concerts
             .filter(concert => concert.isFeatured)
             .map(concert => (
-              <ConcertCard key={concert.id} concert={concert} featured={true} />
+              <ConcertCard key={concert.id} concert={concert} />
             ))}
         </div>
       </section>
@@ -135,9 +244,9 @@ const ConcertsPage = () => {
       <section className="all-concerts">
         <h2>Upcoming Concerts</h2>
         {filteredConcerts.length > 0 ? (
-          <div className="concert-cards">
+          <div className="concert-cards-container">
             {filteredConcerts.map(concert => (
-              <ConcertCard key={concert.id} concert={concert} featured={false} />
+              <ConcertCard key={concert.id} concert={concert} />
             ))}
           </div>
         ) : (
@@ -147,24 +256,11 @@ const ConcertsPage = () => {
         )}
       </section>
 
-      <footer className="concerts-footer">
-        <p>Sign up for our newsletter to get concert updates</p>
-        <div className="newsletter-signup">
-          <input type="email" placeholder="Your email address" />
-          <button>Subscribe</button>
-        </div>
-        <div className="social-links">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-spotify"></i></a>
-        </div>
-      </footer>
     </div>
   );
 };
 
-const ConcertCard = ({ concert, featured }) => {
+const ConcertCard = ({ concert }) => {
   const formattedDate = new Date(concert.date).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -172,21 +268,28 @@ const ConcertCard = ({ concert, featured }) => {
   });
 
   return (
-    <div className={`concert-card ${featured ? 'featured' : ''}`}>
-      <div className="card-image">
-        <img src={concert.image} alt={concert.title} />
-        {featured && <div className="featured-badge">Featured</div>}
+    <div className="concert-card">
+      <div className="concert-image-container">
+        <img 
+          src={concert.image} 
+          alt={concert.title} 
+          className="concert-image"
+        />
+        <div className="tickets-badge">
+          {concert.ticketsAvailable} tickets left
+        </div>
         <div className="genre-badge">{concert.genre}</div>
       </div>
-      <div className="card-content">
-        <h3>{concert.title}</h3>
-        <p className="artist">{concert.artist}</p>
-        <div className="details">
-          <p><i className="fas fa-calendar-alt"></i> {formattedDate}</p>
-          <p><i className="fas fa-map-marker-alt"></i> {concert.location}</p>
-          <p><i className="fas fa-tag"></i> {concert.price}</p>
+      <div className="concert-info">
+        <h3 className="concert-title">{concert.title}</h3>
+        <p className="concert-artist">{concert.artist}</p>
+        <div className="concert-details">
+          <p><strong>Date:</strong> {formattedDate}</p>
+          <p><strong>Time:</strong> {concert.time}</p>
+          <p><strong>Venue:</strong> {concert.location}</p>
+          <p><strong>Price:</strong> {concert.price}</p>
         </div>
-        <button className="buy-button">Get Tickets</button>
+        <button className="book-now-btn">Get Tickets</button>
       </div>
     </div>
   );
