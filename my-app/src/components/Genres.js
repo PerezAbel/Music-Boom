@@ -152,7 +152,7 @@ function Genres() {
             </div>
           ))}
         </div>
-        <Footer />
+
       </div>
     );
   }
@@ -197,7 +197,7 @@ function Genres() {
           </div>
         </div>
       ))}
-      <Footer />
+   
     </div>
   );
 }

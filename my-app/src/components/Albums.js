@@ -214,7 +214,7 @@ function Albums() {
           </div>
         </div>
       ))}
-      <Footer />
+
     </div>
   );
 }

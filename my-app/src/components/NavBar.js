@@ -4,17 +4,17 @@ import {
   FaFeather, 
   FaUserCircle, 
   FaBell,  
-  FaCog,
- 
- 
+  FaCog
 } from "react-icons/fa";
-import { MdLiveTv } from "react-icons/md";
+import { useNavigate } from "react-router-dom"; // ✅ For routing
 import "../css/NavBar.css";
 
 function Navbar() {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileOptions, setShowProfileOptions] = useState(false);
-  const [activeLink, setActiveLink] = useState("Music");
+  const [activeLink, setActiveLink] = useState("All");
+
+  const navigate = useNavigate(); // ✅ Hook for navigation
 
   const notifications = [
     "New album release from Lana Del Rey",
@@ -23,14 +23,11 @@ function Navbar() {
   ];
 
   const navLinks = [
-    { name: "All", },
-    { name: "Live", },
-    { name: "Podcast", },
-    { name: "Socilize", },   
-    { name: "AI", },   
-  
-  
-  
+    { name: "All", path: "/" },
+    { name: "Live", path: "/live" },
+    { name: "Podcasts", path: "/podcasts" },
+    { name: "Socilize", path: "/social" },    
+    { name: "Melody", path: "/melody" },
   ];
 
   const profileOptions = ["Profile", "Settings", "Logout"];
@@ -51,9 +48,11 @@ function Navbar() {
           <div
             key={link.name}
             className={`nav-link-item ${activeLink === link.name ? 'active' : ''}`}
-            onClick={() => setActiveLink(link.name)}
+            onClick={() => {
+              setActiveLink(link.name);
+              navigate(link.path);
+            }}
           >
-            <div className="nav-link-icon">{link.icon}</div>
             <span className="nav-link-text">{link.name}</span>
             {activeLink === link.name && <div className="active-indicator"></div>}
           </div>
@@ -104,12 +103,12 @@ function Navbar() {
           )}
         </div>
 
-        {/* Settings */}
+        {/* Settings Icon */}
         <div className="settings-icon">
           <FaCog />
         </div>
 
-        {/* Profile */}
+        {/* Profile Dropdown */}
         <div className="profile-container">
           <div 
             className="profile-icon-container"

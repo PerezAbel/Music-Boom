@@ -38,7 +38,7 @@ function Footer() {
             <ul>
               <li><a href="/support">Support</a></li>
               <li><a href="/web-player">Web Player</a></li>
-              <li><a href="/free-mobile-app">Free Mobile App</a></li>
+              <li><a href="/free-mobile-app">Get Mobile App</a></li>
             </ul>
           </div>
         </div>

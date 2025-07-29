@@ -16,11 +16,9 @@ function Home() {
         <div className='Main'>
             <ImageSlider />  
             <Music />
-           
             <Concerts/>
             <PopularRadio />
             <Workout />
-            <Footer />
           </div>
       </>
     

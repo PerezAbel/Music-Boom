@@ -1,13 +1,13 @@
 import React from 'react';  
 
 
-function FanBase() {
+function Melody() {
   return (  
     <>  
-    <h1>FanBase</h1>
+    <h1>Melody</h1>  
     </>
 
   );
 }
 
-export default FanBase;
+export default Melody;

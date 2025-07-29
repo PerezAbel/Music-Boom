@@ -252,7 +252,7 @@ function Trending() {
           </div>
         </div>
       ))}
-      <Footer />
+
     </div>
   );
 }
