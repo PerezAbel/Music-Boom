@@ -13,35 +13,35 @@ function Albums() {
           id: "1",
           title: "Midnights",
           artist: "Taylor Swift",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/9/9f/Midnights_-_Taylor_Swift.png",
+          imageUrl: "https://www.vinylchapters.com/wp-content/uploads/2022/10/tay1-750x420.jpg",
           year: "2022"
         },
         {
           id: "2",
           title: "Renaissance",
           artist: "Beyoncé",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/dc/Beyonc%C3%A9_-_Renaissance.png",
+          imageUrl: "https://consequence.net/wp-content/uploads/2022/07/beyonce-renaissance-review.jpeg?quality=80&w=590&h=332&crop=1",
           year: "2022"
         },
         {
           id: "3",
           title: "Mr. Morale & The Big Steppers",
           artist: "Kendrick Lamar",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/4e/Kendrick_Lamar_-_Mr._Morale_%26_the_Big_Steppers.png",
+          imageUrl: "https://atwoodmagazine.com/wp-content/uploads/2022/05/Mr.-Morale-the-Big-Steppers-Kendrick-Lamar-%C2%A9-Renell-Medrano-1-1170x838.jpeg",
           year: "2022"
         },
         {
           id: "4",
           title: "Un Verano Sin Ti",
           artist: "Bad Bunny",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/7/7e/Bad_Bunny_-_Un_Verano_Sin_Ti.png",
+          imageUrl: "https://trend.usao.edu/wp-content/uploads/2023/01/Un-Verno-Sin-Ti-Bad-Bunny-Album.jpg",
           year: "2022"
         },
         {
           id: "5",
           title: "Harry's House",
           artist: "Harry Styles",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5c/Harry_Styles_-_Harry%27s_House.png",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/en/d/d5/Harry_Styles_-_Harry%27s_House.png",
           year: "2022"
         }
       ]
@@ -67,21 +67,21 @@ function Albums() {
           id: "8",
           title: "Back in Black",
           artist: "AC/DC",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/6c/ACDC_Back_in_Black.png",
+          imageUrl: "https://m.media-amazon.com/images/M/MV5BNDZlYWI2MGQtZmQzMS00NDU4LTg2NjQtOTBjYjdhM2I2NWM5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
           year: "1980"
         },
         {
           id: "9",
           title: "The Bodyguard",
           artist: "Whitney Houston",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/52/The_Bodyguard_-_Whitney_Houston.png",
+          imageUrl: "https://m.media-amazon.com/images/M/MV5BNTM4ZWNjZmItMmUxNy00Y2M2LTlhZmItMjc0NjQzZmNiOWY5XkEyXkFqcGc@._V1_.jpg",
           year: "1992"
         },
         {
           id: "10",
           title: "Rumours",
           artist: "Fleetwood Mac",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.png",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",
           year: "1977"
         }
       ]
@@ -93,35 +93,35 @@ function Albums() {
           id: "11",
           title: "Map of the Soul: 7",
           artist: "BTS",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/4/44/Map_of_the_Soul_7.png",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/en/2/21/BTS_-_Map_of_the_Soul_7.png",
           year: "2020"
         },
         {
           id: "12",
           title: "Made in Lagos",
           artist: "Wizkid",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5c/Wizkid_-_Made_in_Lagos.png",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/en/c/c2/Wizkid_-_Made_in_Lagos.png",
           year: "2020"
         },
         {
           id: "13",
           title: "El Dorado",
           artist: "Shakira",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/6c/Shakira_-_El_Dorado.png",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Shakira_El_Dorado_cover.png/250px-Shakira_El_Dorado_cover.png",
           year: "2017"
         },
         {
           id: "14",
           title: "Aya",
           artist: "Aya Nakamura",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/5/5f/Aya_Nakamura_-_AYA.png",
+          imageUrl: "https://cdn-images.dzcdn.net/images/cover/41fc3e7a3430f3a5e1c1780b57c3147f/0x1900-000000-80-0-0.jpg",
           year: "2020"
         },
         {
           id: "15",
           title: "Supermarket",
           artist: "Sauti Sol",
-          imageUrl: "https://upload.wikimedia.org/wikipedia/en/3/3f/Sauti_Sol_-_Supermarket.png",
+          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQATrYaC5ycs5_acq6ADJp24s_RW7QSsN9Lg&s",
           year: "2019"
         }
       ]
