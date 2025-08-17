@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaRobot, FaMicrophone, FaStop, FaChevronDown } from 'react-icons/fa';
-
+import { FaRobot, FaMicrophone, FaStop, FaChevronDown, FaMusic, FaHeadphones, FaUserFriends } from 'react-icons/fa';
+import '../css/Melody.css';
 
 function Melody() {
   const [isListening, setIsListening] = useState(false);
@@ -12,35 +12,57 @@ function Melody() {
 
   const faqs = [
     {
-      question: "How does the AI assistant work?",
-      answer: "Our AI uses advanced natural language processing to understand your queries about electronics and provide accurate responses."
+      question: "How does Melody understand my music taste?",
+      answer: "Melody analyzes your listening history, liked songs, and interactions to learn your preferences and find patterns in your musical taste."
     },
     {
-      question: "What devices can I sell through this platform?",
-      answer: "You can sell smartphones, laptops, tablets, gaming consoles, and other consumer electronics in good condition."
+      question: "Can Melody connect me with other music lovers?",
+      answer: "Yes! Melody matches you with people who have similar music tastes and can suggest collaborative playlists or listening sessions."
     },
     {
-      question: "How is the pricing determined?",
-      answer: "Our AI analyzes market trends, device condition, and specifications to suggest fair market prices."
+      question: "How accurate are the mood-based playlists?",
+      answer: "Our AI analyzes your current activity, time of day, and even your voice tone to create perfectly tailored playlists for your mood."
     },
     {
-      question: "Is my conversation with the AI secure?",
-      answer: "Yes, all communications are encrypted and we don't store personal data without your consent."
+      question: "What can Melody tell me about my singing?",
+      answer: "Melody can analyze pitch, tone, rhythm, and emotional delivery to give you constructive feedback on your vocal performance."
     }
   ];
 
   return (
-    <div className="ai-assistant-container">
-      {/* Futuristic background elements */}
-      <div className="circuit-bg"></div>
-      <div className="holographic-line"></div>
-      <div className="floating-dots"></div>
+    <div className="melody-container">
+      {/* Decorative elements */}
+      <div className="music-note note-1">♪</div>
+      <div className="music-note note-2">♫</div>
+      <div className="music-note note-3">♩</div>
+      <div className="wave-line"></div>
+      <div className="purple-orb"></div>
       
-      <div className="ai-assistant-content">
+      <div className="melody-content">
         {/* Page Title */}
-        <div className="ai-title-container">
-          <h1 className="ai-title">NibbleStore Assistant</h1>
+        <div className="melody-title-container">
+          <h1 className="melody-title">Melody</h1>
+          <p className="melody-subtitle">Your AI Music Companion</p>
           <div className="title-divider"></div>
+        </div>
+
+        {/* Features Section */}
+        <div className="features-section">
+          <div className="feature-card">
+            <div className="feature-icon"><FaMusic /></div>
+            <h3>Smart Playlists</h3>
+            <p>Automatically generated playlists tailored to your mood and activities</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon"><FaUserFriends /></div>
+            <h3>Music Matching</h3>
+            <p>Connect with people who share your unique music taste</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon"><FaHeadphones /></div>
+            <h3>Vocal Coach</h3>
+            <p>Get instant feedback on your singing and improve your skills</p>
+          </div>
         </div>
 
         {/* AI Agent Section */}
@@ -50,33 +72,33 @@ function Melody() {
             <div className={`pulse-ring ${isListening ? 'listening' : ''}`}></div>
           </div>
           
-          <div className="image-grid">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="grid-item" style={{ backgroundImage: `url(https://source.unsplash.com/random/300x300/?tech,${item})` }}></div>
-            ))}
+          <div className="action-buttons">
+            <button className="action-btn purple-bg">Generate Playlist</button>
+            <button className="action-btn dark-bg">Find Music Friends</button>
+            <button className="action-btn purple-bg">Vocal Analysis</button>
           </div>
         </div>
 
         {/* Voice Controls */}
         <div className="voice-controls">
           <button 
-            className={`voice-btn start-btn ${isListening ? 'active' : ''}`}
+            className={`voice-btn ${isListening ? 'active' : ''}`}
             onClick={() => setIsListening(true)}
           >
-            <FaMicrophone /> {isListening ? 'Listening...' : 'Start Conversation'}
+            <FaMicrophone /> {isListening ? 'Melody is listening...' : 'Talk to Melody'}
           </button>
           <button 
             className="voice-btn stop-btn"
             onClick={() => setIsListening(false)}
             disabled={!isListening}
           >
-            <FaStop /> End Conversation
+            <FaStop /> Stop
           </button>
         </div>
 
         {/* Frequently Asked Questions */}
         <div className="faq-section">
-          <h2 className="section-title">Frequently Asked Questions</h2>
+          <h2 className="section-title">Your Questions Answered</h2>
           <div className="faq-grid">
             {faqs.map((faq, index) => (
               <div 

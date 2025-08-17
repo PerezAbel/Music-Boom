@@ -1,6 +1,6 @@
 /* General layout for the sidebar and content */    
 .App-header{
-  display: flex;
+  display: flex; 
 }
 
 .app-container {

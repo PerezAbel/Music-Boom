@@ -1,0 +1,396 @@
+/* Base Styles */
+.social-hub {
+  background-color: #0f0f0f;
+  color: white; 
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Header */
+.social-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #9c27b0, #e91e63);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.social-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-tabs button {
+  background: rgba(30, 30, 30, 0.7);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-tabs button.active {
+  background: linear-gradient(45deg, #9c27b0, #e91e63);
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
+}
+
+.social-tabs button:hover {
+  transform: translateY(-3px);
+}
+
+/* Content Area */
+.social-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Friends Tab */
+.friends-tab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.follow-requests, .friends-list, .notes-section {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.follow-requests h3, .friends-list h3, .notes-section h3 {
+  margin-bottom: 15px;
+  color: #9c27b0;
+}
+
+.request-card, .friend-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.request-card img, .friend-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.friend-avatar {
+  position: relative;
+}
+
+.online-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #00ff00;
+  border-radius: 50%;
+  border: 2px solid #0f0f0f;
+}
+
+.request-info, .friend-info {
+  flex: 1;
+}
+
+.request-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.request-actions button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.request-actions button:first-child {
+  background: #4CAF50;
+  color: white;
+}
+
+.request-actions button:last-child {
+  background: #f44336;
+  color: white;
+}
+
+.send-note-btn {
+  background: #9c27b0;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Notes Section */
+.notes-input {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.notes-input input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  color: white;
+  outline: none;
+}
+
+.notes-input button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.notes-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.note {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.note.music {
+  border-left: 4px solid #9c27b0;
+}
+
+.note p {
+  margin: 5px 0;
+}
+
+.note span {
+  font-size: 0.8rem;
+  color: #bbbbbb;
+}
+
+/* Groups Tab */
+.groups-tab {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.create-group input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 30px 0 0 30px;
+  color: white;
+  outline: none;
+}
+
+.create-group button {
+  background: linear-gradient(45deg, #9c27b0, #e91e63);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.groups-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.group-card {
+  background: rgba(30, 30, 30, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.group-card h4 {
+  margin-bottom: 5px;
+}
+
+.group-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #bbbbbb;
+  font-size: 0.9rem;
+}
+
+.group-card button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.group-card button.joined {
+  background: #f44336;
+  color: white;
+}
+
+/* Shorts Tab */
+.shorts-tab {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.short-card {
+  background: rgba(30, 30, 30, 0.7);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.short-video {
+  width: 100%;
+  height: 200px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.short-info {
+  padding: 15px;
+}
+
+.short-info h4 {
+  margin-bottom: 5px;
+}
+
+.short-info span {
+  color: #bbbbbb;
+  font-size: 0.9rem;
+}
+
+.short-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.short-stats button {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* Stories Tab */
+.stories-tab {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stories-list {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.story-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #9c27b0, #e91e63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.story-circle.viewed {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.story-circle span {
+  position: absolute;
+  bottom: -25px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.create-story {
+  text-align: center;
+}
+
+.create-story button {
+  background: linear-gradient(45deg, #9c27b0, #e91e63);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .friends-tab {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .social-tabs button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
