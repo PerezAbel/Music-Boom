@@ -1,7 +1,6 @@
-/* SideNav Container - Mobile First Approach */
-/* Desktop (persistent beside content) */
+/* SideNav Container */
 .sidenav {
-  height: 320vh;
+  height: 100vh;
   background-color: rgba(20, 15, 35, 0.95);
   backdrop-filter: blur(8px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -11,31 +10,14 @@
   overflow-x: hidden;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
   width: 250px;
-  position: relative;  
-  transform: none;     
-}
-
-/* Expanded State */
-.sidenav.expanded {
-  width: 250px;
-  transform: translateX(0);
-}
-
-/* Mobile Open State */
-.sidenav.mobile-open {
-  transform: translateX(0);
-}
-
-/* Overlay for mobile */
-.sidenav-overlay {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  backdrop-filter: blur(2px);
+  z-index: 100;
+}
+
+/* Collapsed State */
+.sidenav.collapsed {
+  width: 70px;
 }
 
 /* Header */
@@ -135,7 +117,7 @@
 }
 
 .library-header.expanded + .library-sublinks {
-  max-height: 500px; /* Adjust based on content */
+  max-height: 500px;
 }
 
 .sublink {
@@ -170,26 +152,24 @@
   transform: scale(1.1);
 }
 
-/* Collapsed State - Desktop only */
-@media (min-width: 769px) {
-  .sidenav.collapsed {
-    width: 70px;
-  }
-}
-
-/* Mobile (overlay on top of content) */
+/* Mobile Responsiveness - Maintain desktop appearance */
 @media (max-width: 768px) {
   .sidenav {
-    position: fixed;          /* ✅ only fixed on mobile */
-    left: 0;
-    top: 0;
+    position: fixed;
     height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
     z-index: 1000;
   }
 
-  .sidenav.mobile-open {
-    transform: translateX(0);
+  /* Ensure the content doesn't get hidden behind the sidebar */
+  .main-content {
+    margin-left: 70px; /* Match collapsed width */
+  }
+
+  .sidenav.expanded {
+    width: 250px;
+  }
+
+  .sidenav.collapsed {
+    width: 70px;
   }
 }

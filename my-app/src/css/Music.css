@@ -1,23 +1,21 @@
-
-
-
-
 .music-section { 
   background-color: #181818;  
-  width: 100%; 
+  width: 100%;  
+  height: fit-content;
   position: relative;
   padding: 0 40px;
 }
 
 .scroll-wrapper {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .card-container {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 10px 0;
+  padding: 20px 0;
   scrollbar-width: none;
 }
 
@@ -62,56 +60,65 @@
   right: 10px;
   background: linear-gradient(270deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
 }
-.card {
-  position: relative;
-  min-width: 180px;
-  height: 280px;
-  border-radius: 12px;
+
+.artist-card {
+  width: 250px;
+  min-width: 250px;
+  height: auto;
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: #1e1e1e;
+  background-color: #181818; 
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
 
-.card:hover {
-  transform: scale(1.07);
+.artist-card:hover {
+  transform: translateY(-5px);
+  background-color: #383838;
 }
 
-.card-img {
+.artist-image-container {
+  position: relative;
   width: 100%;
-  height: 180px;
+  height: 250px;
+}
+
+.artist-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: filter 0.3s ease;
 }
 
-.card:hover .card-img {
-  filter: brightness(0.4);
-}
-
-.card-title {
-  padding: 10px;
+.artist-details {
+  padding: 16px;
   color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
 }
 
-.card-details {
-  padding: 0 10px 10px;
+.artist-title {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-info {
+  font-size: 0.9rem;
   color: #b3b3b3;
-  font-size: 0.8rem;
-  text-align: center;
-  flex-grow: 1;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .play-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 20px;
+  right: 20px;
   background: #1db954;
   border: none;
   color: white;
@@ -127,12 +134,12 @@
   justify-content: center;
 }
 
-.card:hover .play-button {
+.artist-card:hover .play-button {
   opacity: 1;
 }
 
 .play-button:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: scale(1.1);
 }
 
 .groovora-tag {
@@ -147,4 +154,40 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  z-index: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .music-section {
+    padding: 0 20px;
+  }
+  
+  .artist-card {
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .artist-image-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-card {
+    width: 160px;
+    min-width: 160px;
+  }
+  
+  .artist-image-container {
+    height: 160px;
+  }
+  
+  .artist-title {
+    font-size: 1rem;
+  }
+  
+  .artist-info {
+    font-size: 0.8rem;
+  }
 }

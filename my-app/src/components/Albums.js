@@ -136,12 +136,16 @@ function Albums() {
 
   const scrollLeft = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: -200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: -200, behavior: 'smooth' });
+    }
   };
 
   const scrollRight = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: 200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: 200, behavior: 'smooth' });
+    }
   };
 
   // Filter all albums if search is active
@@ -156,15 +160,27 @@ function Albums() {
       <div className="Albums-main">
         <div className="Albums-container">
           {filteredAlbums.map((album) => (
-            <div className="Album" key={album.id}>
-              <div className="Album-img" style={{ backgroundImage: `url(${album.imageUrl})` }}>
-                <button className="play-button" onClick={() => console.log(`Play ${album.title}`)}>
+            <div className="album-card" key={album.id}>
+              <div className="album-image-container">
+                <span className="groovora-tag">
+                  <FaMusic style={{ marginRight: 4 }} />
+                  {album.year}
+                </span>
+                <img 
+                  src={album.imageUrl} 
+                  className="album-image" 
+                  alt={album.title} 
+                />
+                <button 
+                  className="play-button" 
+                  onClick={() => console.log(`Play ${album.title}`)}
+                >
                   ▶
                 </button>
-                <div className="Album-overlay">
-                  <h5 className="Album-title">{album.title}</h5>
-                  <p className="Album-artist">{album.artist}</p>
-                </div>
+              </div>
+              <div className="album-details">
+                <h5 className="album-title">{album.title}</h5>
+                <p className="album-artist">{album.artist}</p>
               </div>
             </div>
           ))}
@@ -182,20 +198,28 @@ function Albums() {
           <div className="scroll-wrapper">
             <div id={`album-container-${index}`} className="card-container">
               {category.albums.map((album) => (
-                <div key={album.id} className="card">
-                  <span className="groovora-tag">
-                    <FaMusic style={{ marginRight: 4 }} />
-                    {album.year}
-                  </span>
-                  <img src={album.imageUrl} className="card-img" alt={album.title} />
-                  <div className="card-title">{album.title}</div>
-                  <div className="card-details">{album.artist}</div>
-                  <button 
-                    className="play-button" 
-                    onClick={() => console.log(`Playing ${album.title}`)}
-                  >
-                    ▶
-                  </button>
+                <div key={album.id} className="album-card">
+                  <div className="album-image-container">
+                    <span className="groovora-tag">
+                      <FaMusic style={{ marginRight: 4 }} />
+                      {album.year}
+                    </span>
+                    <img 
+                      src={album.imageUrl} 
+                      className="album-image" 
+                      alt={album.title} 
+                    />
+                    <button 
+                      className="play-button" 
+                      onClick={() => console.log(`Playing ${album.title}`)}
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <div className="album-details">
+                    <h5 className="album-title">{album.title}</h5>
+                    <p className="album-artist">{album.artist}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -214,7 +238,6 @@ function Albums() {
           </div>
         </div>
       ))}
-
     </div>
   );
 }

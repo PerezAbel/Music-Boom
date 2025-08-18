@@ -204,6 +204,7 @@ function Genres() {
     }
   ];
 
+
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (term) => {
@@ -212,12 +213,16 @@ function Genres() {
 
   const scrollLeft = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: -200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: -200, behavior: 'smooth' });
+    }
   };
 
   const scrollRight = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: 200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: 200, behavior: 'smooth' });
+    }
   };
 
   // Filter all genres if search is active
@@ -231,19 +236,31 @@ function Genres() {
       <div className="Gmain">
         <div className="Genres-container">
           {filteredGenres.map((item) => (
-            <div className="Genres" key={item.id}>
-              <div className="Genres-img" style={{ backgroundImage: `url(${item.imageurl})` }}>
-                <button className="play-button" onClick={() => console.log(`Play ${item.Title}`)}>
+            <div className="genre-card" key={item.id}>
+              <div className="genre-image-container">
+                <span className="groovora-tag">
+                  <FaMusic style={{ marginRight: 4 }} />
+                  Groovora
+                </span>
+                <img 
+                  src={item.imageurl} 
+                  className="genre-image" 
+                  alt={item.Title} 
+                />
+                <button 
+                  className="play-button" 
+                  onClick={() => console.log(`Play ${item.Title}`)}
+                >
                   ▶
                 </button>
-                <div className="Genres-overlay">
-                  <h5 className="Genres-title">{item.Title}</h5>
-                </div>
+              </div>
+              <div className="genre-details">
+                <h5 className="genre-title">{item.Title}</h5>
+                <p className="genre-info">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     );
   }
@@ -256,20 +273,28 @@ function Genres() {
           <div className="scroll-wrapper">
             <div id={`genre-container-${index}`} className="card-container">
               {category.genres.map((genre) => (
-                <div key={genre.id} className="card">
-                  <span className="groovora-tag">
-                    <FaMusic style={{ marginRight: 4 }} />
-                    Groovora
-                  </span>
-                  <img src={genre.imageurl} className="card-img" alt={genre.Title} />
-                  <div className="card-title">{genre.Title}</div>
-                  <div className="card-details">{genre.description}</div>
-                  <button 
-                    className="play-button" 
-                    onClick={() => console.log(`Playing ${genre.Title}`)}
-                  >
-                    ▶
-                  </button>
+                <div key={genre.id} className="genre-card">
+                  <div className="genre-image-container">
+                    <span className="groovora-tag">
+                      <FaMusic style={{ marginRight: 4 }} />
+                      Groovora
+                    </span>
+                    <img 
+                      src={genre.imageurl} 
+                      className="genre-image" 
+                      alt={genre.Title} 
+                    />
+                    <button 
+                      className="play-button" 
+                      onClick={() => console.log(`Playing ${genre.Title}`)}
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <div className="genre-details">
+                    <h5 className="genre-title">{genre.Title}</h5>
+                    <p className="genre-info">{genre.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -288,7 +313,6 @@ function Genres() {
           </div>
         </div>
       ))}
-   
     </div>
   );
 }

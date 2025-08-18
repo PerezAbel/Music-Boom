@@ -1,9 +1,11 @@
 import React from 'react';
-import '../css/Music.css'; 
-
+import '../css/Music.css';   
+import './SideNav'
+import { useNavigate } from 'react-router-dom';
 import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-function Music() {
+function Music() {  
+   const navigate = useNavigate();
   // Categories data
   const categories = [
     {
@@ -283,17 +285,27 @@ function Music() {
     }
   ];
 
+
   const scrollLeft = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: -200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: -200, behavior: 'smooth' });
+    }
   };
 
   const scrollRight = (containerId) => {
     const container = document.getElementById(containerId);
-    container.scrollBy({ left: 200, behavior: 'smooth' });
+    if (container) {
+      container.scrollBy({ left: 200, behavior: 'smooth' });
+    }
   };
 
-  return (
+   const handleArtistClick = (artistName) => {
+    console.log(`Navigating to artist: ${artistName}`);
+    navigate(`/artist/${encodeURIComponent(artistName)}`);
+  };
+
+ return (
     <div className="music-section">
       {categories.map((category, index) => (
         <div key={index} className="category-section">
@@ -301,17 +313,35 @@ function Music() {
           <div className="scroll-wrapper">
             <div id={`container-${index}`} className="card-container">
               {category.artists.map((artist, artistIndex) => (
-                <div key={artistIndex} className="card">
-                  <span className="groovora-tag">
-                    <FaMusic style={{ marginRight: 4 }} />
-                    Groovora
-                  </span>
-                  <img src={artist.imageUrl} className="card-img" alt={artist.title} />
-                  <div className="card-title">{artist.title}</div>
-                  <div className="card-details">{artist.details}</div>
-                  <button className="play-button" onClick={() => console.log(`Playing ${artist.title}`)}>
-                    ▶
-                  </button>
+                <div 
+                  key={artistIndex} 
+                  className="artist-card"
+                  onClick={() => handleArtistClick(artist.title)}
+                >
+                  <div className="artist-image-container">
+                    <span className="groovora-tag">
+                      <FaMusic style={{ marginRight: 4 }} />
+                      Groovora
+                    </span>
+                    <img 
+                      src={artist.imageUrl} 
+                      className="artist-image" 
+                      alt={artist.title} 
+                    />
+                    <button 
+                      className="play-button" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log(`Playing ${artist.title}`);
+                      }}
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <div className="artist-details">
+                    <h5 className="artist-title">{artist.title}</h5>
+                    <p className="artist-info">{artist.details}</p>
+                  </div>
                 </div>
               ))}
             </div>
