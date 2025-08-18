@@ -34,10 +34,6 @@ function SideNav() {
 
   return (
     <div className={`sidenav ${expanded ? 'expanded' : 'collapsed'}`}>
-      <div className="sidenav-header">
-        <FontAwesomeIcon icon={faFeather} className="logo-icon" />
-        {expanded && <span className="logo-text">Groovaura</span>}
-      </div>
 
       <div className="sidenav-section">
         {expanded && <div className="section-title">MENU</div>}
