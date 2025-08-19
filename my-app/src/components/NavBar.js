@@ -13,10 +13,10 @@ function Navbar() {
 
   const navLinks = [
     { name: "Explore", path: "/" },
-    { name: "Live", path: "/discover" },
-    { name: "Melody", path: "/artists" },
+    { name: "Live", path: "/live" },
+    { name: "Melody", path: "/melody" },
     { name: "Podcasts", path: "/podcasts" },
-    { name: "Socilize", path: "/playlists" },
+    { name: "Socilize", path: "/social" },
   ];
 
   const handleLinkClick = (linkName, path) => {

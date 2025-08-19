@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../css/Genres.css';
+import '../css/Genres.css';  
+import SideNav from "../components/SideNav"; // adjust the path
+
 import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Footer from './Footer';
 
@@ -233,7 +235,7 @@ function Genres() {
     );
 
     return (
-      <div className="Gmain">
+      <div className="Gmain"> 
         <div className="Genres-container">
           {filteredGenres.map((item) => (
             <div className="genre-card" key={item.id}>

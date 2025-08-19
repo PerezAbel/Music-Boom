@@ -5,10 +5,10 @@
 }
 
 .charts-header {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   margin-bottom: 2rem;
-  color: #333;
-  text-align: center;
+  color: #ffffff;
+  
 }
 
 .concert-cards-container {
@@ -41,7 +41,7 @@
 .concert-card {
   min-width: 300px;
   max-width: 300px;
-  background: white;
+  background: rgb(244, 241, 241);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

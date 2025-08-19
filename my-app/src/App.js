@@ -35,7 +35,7 @@ function App() {
             <Route path="/social" element={<Social />} /> 
             <Route path="/melody" element={<Melody />} /> 
             <Route path="/artists" element={<Artists />} />
-             <Route path="/artist/:artistName" element={<ArtistsDetails />} />
+            <Route path="/artist/:artistName" element={<ArtistsDetails />} />
             <Route path="/genres" element={<Genres />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/trending" element={<Trending />} />  

@@ -1,7 +1,7 @@
 /* SideNav Container */
 .sidenav {
   height: 100vh;
-  background-color: rgba(20, 15, 35, 0.95);
+  background-color: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(8px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;

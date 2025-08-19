@@ -9,7 +9,7 @@ function Music() {
   // Define your categories with artists data
   const categories = [
     {
-      title: 'Featured Artists',
+      title: 'Popular Artists',
       artists: [
         {
           title: 'Chris Brown',
@@ -44,7 +44,7 @@ function Music() {
       ]
     },
     {
-      title: 'Popular Rappers',
+      title: 'Rising Artsists',
       artists: [
         {
           title: 'Drake',
@@ -60,6 +60,21 @@ function Music() {
           title: 'J. Cole',
           imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
           details: 'Conscious rap heavyweight'
+        },
+         {
+          title: 'Travis Scott',
+          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
+          details: 'Astroworld architect'
+        },
+        {
+          title: 'J. Cole',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
+          details: 'Conscious rap heavyweight'
+        }, 
+          {
+          title: 'Travis Scott',
+          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
+          details: 'Astroworld architect'
         }
       ]
     }

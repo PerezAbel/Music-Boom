@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/Music.css';   
-import './SideNav'
+import SideNav from "../components/SideNav"; // adjust the path
 import { useNavigate } from 'react-router-dom';
 import { FaMusic, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -306,7 +306,8 @@ function Music() {
   };
 
  return (
-    <div className="music-section">
+    <div className="music-section"> 
+     
       {categories.map((category, index) => (
         <div key={index} className="category-section">
           <h2 style={{ textAlign: 'left', color: '#FFFFFF' }}>{category.title}</h2>

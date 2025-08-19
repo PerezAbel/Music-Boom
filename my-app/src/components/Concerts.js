@@ -52,16 +52,7 @@ const concertData = [
     ticketsAvailable: 89,
     imageUrl: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
   },
-  {
-    id: 6,
-    title: "Pop Revolution",
-    artist: "Taylor Swift",
-    date: "September 5, 2023",
-    time: "8:00 PM",
-    venue: "MetLife Stadium",
-    ticketsAvailable: 312,
-    imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-  }
+
 ];
 
 function Concerts() {  
