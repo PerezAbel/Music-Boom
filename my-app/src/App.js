@@ -1,6 +1,7 @@
 import './App.css';   
 import ArtistsDetails from './components/ArtistsDetails'; 
-import PodcastDetails from './components/PodcastDetails';
+import PodcastDetails from './components/PodcastDetails'; 
+import SongDetails from './components/SongDetails';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';  
 import Footer from './components/Footer';  
@@ -22,6 +23,7 @@ import Playlist from './components/Playlist';
 import Albums from './components/Albums'; 
 import ConcertsPage from './components/ConcertsPage';
 
+
 function App() {
   return (
     <div className="App"> 
@@ -37,7 +39,8 @@ function App() {
             <Route path="/melody" element={<Melody />} /> 
             <Route path="/artists" element={<Artists />} />
             <Route path="/artist/:artistName" element={<ArtistsDetails />} /> 
-            <Route path="/podcast/:id" element={<PodcastDetails />} />
+            <Route path="/podcast/:id" element={<PodcastDetails />} /> 
+              <Route path="/songdetails" element={<SongDetails />} />
             <Route path="/genres" element={<Genres />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/trending" element={<Trending />} />  

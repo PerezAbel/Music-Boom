@@ -98,7 +98,8 @@
 }
 
 .artist-title {
-  font-size: 1.1rem;
+  font-size: 1.1rem;  
+  color: #ccd4cf;
   margin: 0 0 8px 0;
   white-space: nowrap;
   overflow: hidden;

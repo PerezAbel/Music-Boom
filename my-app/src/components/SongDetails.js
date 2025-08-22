@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './SongDetails.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import '../css/SongDetails.css';
 
-const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
+const SongDetails = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { song } = location.state || {};
+  
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(80);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Simulate progress bar movement when song is playing
   useEffect(() => {
@@ -14,6 +20,7 @@ const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
         setCurrentTime(prev => {
           if (prev >= duration) {
             clearInterval(interval);
+            setIsPlaying(false);
             return duration;
           }
           return prev + 1;
@@ -26,12 +33,40 @@ const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
   // Set initial duration when song changes
   useEffect(() => {
     if (song) {
-      setDuration(song.duration || 240); // Default 4 minutes if not provided
+      setDuration(song.duration || 240);
       setCurrentTime(0);
+      setIsPlaying(false);
     }
   }, [song]);
 
-  if (!song) return null;
+  const handleClose = () => {
+    navigate(-1); // Go back to previous page
+  };
+
+  const handleTogglePlay = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  if (!song) {
+    return (
+      <div className="song-details-overlay" onClick={handleClose}>
+        <div className="song-details-container" onClick={(e) => e.stopPropagation()}>
+          <div className="song-details-header">
+            <button className="close-btn" onClick={handleClose}>
+              <span className="close-icon">×</span>
+            </button>
+            <h2>No Song Selected</h2>
+          </div>
+          <div className="no-song-message">
+            <p>Please select a song from the main page.</p>
+            <button onClick={handleClose} className="back-button">
+              Go Back
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -42,11 +77,11 @@ const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="song-details-overlay" onClick={onClose}>
+    <div className="song-details-overlay" onClick={handleClose}>
       <div className="song-details-container" onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="song-details-header">
-          <button className="close-btn" onClick={onClose}>
+          <button className="close-btn" onClick={handleClose}>
             <span className="close-icon">×</span>
           </button>
           <h2>Now Playing</h2>
@@ -55,7 +90,7 @@ const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
         {/* Album Art */}
         <div className="album-art-container">
           <img 
-            src={song.albumArt || '/default-album.jpg'} 
+            src={song.imageUrl || '/default-album.jpg'} 
             alt={song.title}
             className="album-art"
           />
@@ -93,7 +128,7 @@ const SongDetails = ({ song, onClose, isPlaying = false, onTogglePlay }) => {
           </button>
           <button 
             className={`play-btn ${isPlaying ? 'playing' : ''}`}
-            onClick={onTogglePlay}
+            onClick={handleTogglePlay}
           >
             <span className="play-icon">
               {isPlaying ? '⏸' : '▶'}
