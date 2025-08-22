@@ -47,33 +47,33 @@ function Music() {
       title: 'Rising Artsists',
       artists: [
         {
-          title: 'Drake',
-          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg',
+          title: 'Dooechi',
+          imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/doechii-at-the-variety-hitmakers-brunch-held-at-nya-west-on-news-photo-1744655983.pjpeg?crop=0.612xw:0.918xh;0.211xw,0.0816xh&resize=640:*',
           details: 'Chart-topping rap superstar'
         },
         {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
+          title: 'Myles Smith',
+          imageUrl: 'https://cdn-p.smehost.net/sites/005297e5d91d4996984e966fac4389ea/wp-content/uploads/2024/07/Myles-Smith-1.png',
           details: 'Astroworld architect'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
+          title: 'ceechynaa',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLSfomsCxkYWxIh_MD4q7GuJltvZNwU0P9EA&s',
           details: 'Conscious rap heavyweight'
         },
          {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
+          title: 'Mitch Uta',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn2x22KIpvD1iD3Noeks76BSzNphqQg02Nkw&s',
           details: 'Astroworld architect'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
+          title: 'Lola Young',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfiHG_-jVlVBE1gzR2HCoJETfNLV25o_lXew&s',
           details: 'Conscious rap heavyweight'
         }, 
           {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
+          title: 'Fuckers',
+          imageUrl: 'https://www.nme.com/wp-content/uploads/2025/04/NMEAR_NME-FCUKERS-THE-COVER-2024-5-CREDIT-MARISA-BAZAN@2000x1270.jpg',
           details: 'Astroworld architect'
         }
       ]

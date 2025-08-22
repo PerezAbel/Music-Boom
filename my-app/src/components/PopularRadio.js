@@ -12,34 +12,34 @@ function PopularRadio() {
       title: 'Trending Songs',
       artists: [
         {
-          title: 'Chris Brown',
-          imageUrl: 'https://s1.ticketm.net/dam/a/c02/93faea5e-ee33-411f-a8e6-6df0bb884c02_RETINA_PORTRAIT_3_2.jpg',
-          details: 'R&B superstar with multiple Grammy awards'
+          title: 'APT',
+          imageUrl: 'https://i1.sndcdn.com/artworks-AHYK4zCWSpHSXfDx-aOHvXQ-t1080x1080.png',
+          details: 'Bruno Mars & Rose'
         },
         {
-          title: 'Kendrick Lamar',
-          imageUrl: "https://images6.alphacoders.com/909/909094.jpg",
-          details: 'Pulitzer Prize-winning rap artist and lyricist'
+          title: 'Ordinary',
+          imageUrl: "https://i1.sndcdn.com/artworks-HSPGU5NJIcUU-0-t500x500.jpg",
+          details: 'Alex Warren'
         },
         {
-          title: 'Ariana Grande',
-          imageUrl: 'https://i.pinimg.com/236x/0e/dc/58/0edc58bdb4ab0a333ebd396550c75a32.jpg',
-          details: 'Pop sensation with a four-octave vocal range'
+          title: 'Just Keep Watching',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/en/9/97/Tate_McRae_-_Just_Keep_Watching.png',
+          details: 'Tate Macrea'
         },
         {
-          title: 'Coldplay',
-          imageUrl: 'https://artist99.cdn107.com/f7d/f7df8504d3756b4052c381941d684a51_xl.jpg',
-          details: 'British rock band known for anthemic hits'
+          title: 'Daisies',
+          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/07/Justin-Bieber-Renell-Medrano-2025-press-billboard-1548.jpg?w=942&h=628&crop=1',
+          details: 'Justin Bieber'
         },
         {
-          title: 'The Weeknd',
-          imageUrl: 'https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg',
-          details: 'Canadian singer blending R&B and pop with dark themes'
+          title: 'No One Noticed',
+          imageUrl: 'https://i.scdn.co/image/ab67616d0000b27330257bd4af1639e05af14c98',
+          details: 'The Maries'
         },
         {
-          title: 'Future',
-          imageUrl: 'https://static.standard.co.uk/2024/05/08/11/59/Future_3vqmbcm4.jpeg?width=1200&auto=webp&quality=75',
-          details: 'Influential trap artist and prolific hitmaker'
+          title: 'Drake',
+          imageUrl: 'https://i.ytimg.com/vi/weU76DGHKU0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDjmu3aZIwxAvsu1KdlZlvDPYbwBQ',
+          details: 'What did i do'
         }
       ]
     },
@@ -47,34 +47,34 @@ function PopularRadio() {
       title: 'Record Breakers',
       artists: [
         {
-          title: 'Drake',
-          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg',
-          details: 'Chart-topping rap superstar'
+          title: 'Elton John',
+          imageUrl: 'https://i.ytimg.com/vi/sxb0GeS4gL8/maxresdefault.jpg',
+          details: 'Candle in the Wind'
         },
         {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'Harry Styles',
+          imageUrl: 'https://i.scdn.co/image/ab67616d0000b2732e8ed79e177ff6011076f5f0',
+          details: 'As it Was'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
-          details: 'Conscious rap heavyweight'
+          title: 'Ed Sheeran',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQsUc_Ta8jJoujVC2okyZWPMFdfXhklicI8Q&s',
+          details: 'Shape of You'
         },
          {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'Bruno Mars',
+          imageUrl: 'https://cdn-images.dzcdn.net/images/artist/d80ed6a27d4fdd554b44c6539eee6fe5/1900x1900-000000-80-0-0.jpg',
+          details: 'Uptown Funk'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
-          details: 'Conscious rap heavyweight'
+          title: 'Black Eyed Peas',
+          imageUrl: 'https://images.genius.com/52f728ef67b4fbaaca192945e2e3e794.1000x1000x1.png',
+          details: 'I Gotta Feeling'
         }, 
           {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'Mariey Carey & Boyz II Men',
+          imageUrl: 'https://f4.bcbits.com/img/a2387808276_16.jpg',
+          details: 'One Sweet Day'
         }
       ]
     }

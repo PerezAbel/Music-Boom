@@ -4,21 +4,21 @@ import '../css/ImageSlider.css';
 function ImageSlider() {
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://variety.com/wp-content/uploads/2025/06/MC-Press-Photo-e1749171212756.jpg',
       title: 'Summer Vibes 2024',
       subtitle: 'New Album Release',
       description: 'The hottest tracks for your summer playlist featuring top artists',
       genre: 'Pop • EDM • Hip-Hop'
     },
     {
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://i.insider.com/6776c83b9de00e389eb41fb5?width=700',
       title: 'Rising Stars',
       subtitle: 'Discover New Talent',
       description: 'Emerging artists breaking into the scene this season',
       genre: 'Indie • Alternative • R&B'
     },
     {
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://www.bridportmusic.co.uk/wp-content/uploads/2024/01/people-inside-a-club-8030137.jpg',
       title: 'Electronic Dreams',
       subtitle: 'Festival Anthems',
       description: 'The beats that will dominate clubs and festivals worldwide',

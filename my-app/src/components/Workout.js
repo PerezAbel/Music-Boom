@@ -9,72 +9,72 @@ function PopularRadio() {
   // Define your categories with artists data
   const categories = [
     {
-      title: 'Recomended Genres for you',
+      title: 'Afro Heats',
       artists: [
         {
-          title: 'Chris Brown',
-          imageUrl: 'https://s1.ticketm.net/dam/a/c02/93faea5e-ee33-411f-a8e6-6df0bb884c02_RETINA_PORTRAIT_3_2.jpg',
-          details: 'R&B superstar with multiple Grammy awards'
+          title: 'Ninola',
+          imageUrl: 'https://mp3bullet.ng/wp-content/uploads/2024/11/Niniola-1000x600-1.jpg',
+          details: 'Ginger Me'
         },
         {
-          title: 'Kendrick Lamar',
-          imageUrl: "https://images6.alphacoders.com/909/909094.jpg",
-          details: 'Pulitzer Prize-winning rap artist and lyricist'
+          title: 'Toxic Lyrikali',
+          imageUrl: "https://i.ytimg.com/vi/o_Yt7uY35kE/maxresdefault.jpg",
+          details: 'Sick'
         },
         {
-          title: 'Ariana Grande',
-          imageUrl: 'https://i.pinimg.com/236x/0e/dc/58/0edc58bdb4ab0a333ebd396550c75a32.jpg',
-          details: 'Pop sensation with a four-octave vocal range'
+          title: 'Zuchu',
+          imageUrl: 'https://i.ytimg.com/vi/68__GT8TSAw/maxresdefault.jpg',
+          details: 'Zuchu'
         },
         {
-          title: 'Coldplay',
-          imageUrl: 'https://artist99.cdn107.com/f7d/f7df8504d3756b4052c381941d684a51_xl.jpg',
-          details: 'British rock band known for anthemic hits'
+          title: 'Rema',
+          imageUrl: 'https://i.ytimg.com/vi/ar7sFbbL09Q/maxresdefault.jpg',
+          details: 'Kelebu'
         },
         {
-          title: 'The Weeknd',
-          imageUrl: 'https://wallpapers.com/images/featured/the-weeknd-after-hours-3cedl88oh962sybq.jpg',
-          details: 'Canadian singer blending R&B and pop with dark themes'
+          title: 'Mboso ft DVoice',
+          imageUrl: 'https://i.ytimg.com/vi/jZv0PX8-_5Y/maxresdefault.jpg',
+          details: 'Tunapendana'
         },
         {
-          title: 'Future',
-          imageUrl: 'https://static.standard.co.uk/2024/05/08/11/59/Future_3vqmbcm4.jpeg?width=1200&auto=webp&quality=75',
-          details: 'Influential trap artist and prolific hitmaker'
+          title: 'JazzWorks.Thukuthela & mAWHoo',
+          imageUrl: 'https://i.scdn.co/image/ab67616d0000b273681e827601ff1fee18ad0cea',
+          details: 'Usiziwa Kanjan'
         }
       ]
     },
     {
-      title: 'Podcasts for you ',
+      title: 'The Best of Netflix & TikTok',
       artists: [
         {
-          title: 'Drake',
-          imageUrl: 'https://www.billboard.com/wp-content/uploads/2025/01/Drake-2019-red-carpet-billboard-pro-1260.jpg',
-          details: 'Chart-topping rap superstar'
+          title: 'Saja Boys',
+          imageUrl: 'https://i1.sndcdn.com/artworks-SUztm4uP3kiZuVc2-2ixXww-t500x500.jpg',
+          details: 'Soda Pop'
         },
         {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'WizTheMc',
+          imageUrl: 'https://i.ytimg.com/vi/Z3aduh5fxCo/maxresdefault.jpg',
+          details: 'Show Me Love'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
-          details: 'Conscious rap heavyweight'
+          title: 'Huntrix',
+          imageUrl: 'https://images.genius.com/83a4701279b25b49b9c7af1940f0b17a.1000x1000x1.png',
+          details: 'Golden'
         },
          {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'There She Goes',
+          imageUrl: 'https://i.ytimg.com/vi/78Ri5noWlRE/maxresdefault.jpg',
+          details: 'CYRIL x MOONLGHT x The Las'
         },
         {
-          title: 'J. Cole',
-          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNvNnfnOFzqbbN1UcaHgzw3hYrxH84brmbRw&s',
-          details: 'Conscious rap heavyweight'
+          title: 'Saja Boys',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/66/Saja_Boys_-_Your_Idol.png',
+          details: 'Your Idol'
         }, 
           {
-          title: 'Travis Scott',
-          imageUrl: 'https://media.cnn.com/api/v1/images/stellar/prod/211212152053-travis-scott-cacti-seltzer-discontinued.jpg',
-          details: 'Astroworld architect'
+          title: 'Katseye',
+          imageUrl: 'https://i.ytimg.com/vi/GYyzaa9_ERg/maxresdefault.jpg',
+          details: 'Gabrielle'
         }
       ]
     }
