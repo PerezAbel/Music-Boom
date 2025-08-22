@@ -1,7 +1,7 @@
 .concerts-page {
   padding: 2rem;
   width: 100%; 
-  background-color: #222;
+  background-color: #1a1a1a;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
 }
@@ -13,13 +13,13 @@
 
 .concerts-header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #c5009a;
   margin-bottom: 0.5rem;
 }
 
 .concerts-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ebebeb;
 }
 
 .filter-container {
@@ -176,7 +176,7 @@
 .concert-card {
   min-width: 300px;
   max-width: 300px;
-  background: white;
+  background: rgb(29, 29, 29);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -235,12 +235,12 @@
 .concert-title {
   font-size: 1.3rem;
   margin: 0 0 0.5rem 0;
-  color: #222;
+  color: #e90482;
 }
 
 .concert-artist {
   font-size: 1rem;
-  color: #666;
+  color: #99026b;
   margin: 0 0 1rem 0;
 }
 
@@ -251,7 +251,7 @@
 .concert-details p {
   margin: 0.3rem 0;
   font-size: 0.9rem;
-  color: #555;
+    color: #dcdcdc;
 }
 
 .book-now-btn {

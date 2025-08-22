@@ -73,48 +73,7 @@ const ConcertsPage = () => {
       isFeatured: false,
       ticketsAvailable: 89
     },
-    {
-      id: 6,
-      title: "Country Roads",
-      artist: "Luke Combs, Miranda Lambert",
-      date: "2023-09-10",
-      time: "7:30 PM",
-      location: "Nissan Stadium, Nashville",
-      country: "USA",
-      price: "$70 - $220",
-      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      genre: "Country",
-      isFeatured: true,
-      ticketsAvailable: 312
-    }, 
-    {
-      id: 6,
-      title: "Country Roads",
-      artist: "Luke Combs, Miranda Lambert",
-      date: "2023-09-10",
-      time: "7:30 PM",
-      location: "Nissan Stadium, Nashville",
-      country: "USA",
-      price: "$70 - $220",
-      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      genre: "Country",
-      isFeatured: true,
-      ticketsAvailable: 312
-    }, 
-    {
-      id: 6,
-      title: "Country Roads",
-      artist: "Luke Combs, Miranda Lambert",
-      date: "2023-09-10",
-      time: "7:30 PM",
-      location: "Nissan Stadium, Nashville",
-      country: "USA",
-      price: "$70 - $220",
-      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      genre: "Country",
-      isFeatured: true,
-      ticketsAvailable: 312
-    },  
+
 
   ]);
 

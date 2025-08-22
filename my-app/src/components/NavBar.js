@@ -13,9 +13,10 @@ function Navbar() {
 
   const navLinks = [
     { name: "Explore", path: "/" },
-    // { name: "Live", path: "/live" },
+    // { name: "Live", path: "/live" },  
+      { name: "Podcasts", path: "/podcasts" },
     { name: "Melody", path: "/melody" },
-    { name: "Podcasts", path: "/podcasts" },
+  
     // { name: "Socilize", path: "/social" },
   ];
 

@@ -1,11 +1,153 @@
-.Gmain {  
-    background-color: #181818;  
-    width: 100%;
-    min-height: 100vh;
+
+
+/* Podcast Slider Styles */
+.podcast-slider-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: 40px; 
+  margin-top: 0;
+
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-slide.active {
+  opacity: 1;
+}
+
+.slider-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.slider-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.slider-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.slider-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.slider-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-indicator.active {
+  background-color: #fff;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-prev {
+  left: 20px;
+}
+
+.slider-next {
+  right: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .podcast-slider-container {
+    height: 400px;
+  }
+  
+  .slider-overlay h2 {
+    font-size: 2rem;
+  }
+  
+  .slider-overlay p {
+    font-size: 1rem;
+  }
+  
+  .slider-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .podcast-slider-container {
+    height: 300px;
+    margin-bottom: 30px;
+  }
+  
+  .slider-overlay {
+    padding: 15px;
+  }
+  
+  .slider-overlay h2 {
+    font-size: 1.5rem;
+  }
+  
+  .slider-indicators {
+    bottom: 10px;
+  }
 }
 
 .Podcasts-container {     
-    background-color: #181818;
+    background-color: #181818; 
+    
     display: grid;   
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -79,7 +221,11 @@
 
 .Podcasts:hover .play-button {
     display: block;
-}
+}  
+
+
+
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {

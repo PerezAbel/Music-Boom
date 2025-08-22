@@ -4,14 +4,14 @@ import '../css/ImageSlider.css';
 function ImageSlider() {
   const slides = [
     {
-      image: 'https://variety.com/wp-content/uploads/2025/06/MC-Press-Photo-e1749171212756.jpg',
+      image: 'https://www.billboard.com/wp-content/uploads/2025/06/sabrina-carpenter-brit-awards-2025-red-carpet-a-billboard-1548.jpg',
       title: 'Summer Vibes 2024',
       subtitle: 'New Album Release',
       description: 'The hottest tracks for your summer playlist featuring top artists',
       genre: 'Pop • EDM • Hip-Hop'
     },
     {
-      image: 'https://i.insider.com/6776c83b9de00e389eb41fb5?width=700',
+      image: 'https://cdn.vanguardngr.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-31-at-5.49.32-PM.jpeg',
       title: 'Rising Stars',
       subtitle: 'Discover New Talent',
       description: 'Emerging artists breaking into the scene this season',

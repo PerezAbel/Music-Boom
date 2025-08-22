@@ -130,12 +130,7 @@ function Genres() {
           imageurl: "https://preview.redd.it/new-key-visual-season-2-v0-p66ys0qw4ppa1.png?auto=webp&s=dbebf95a0a830d262a81b4ca5dca9e9e0cf99bd2",
           description: "Soundtracks from Japanese animation"
         },
-        {
-          id: "10",
-          Title: "Christian Music",
-          imageurl: "https://images.pexels.com/photos/2147029/pexels-photo-2147029.jpeg?cs=srgb&dl=pexels-lstan-2147029.jpg&fm=jpg",
-          description: "Inspirational and worship music"
-        }
+      
       ]
     },
     {

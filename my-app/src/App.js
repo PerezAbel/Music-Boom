@@ -1,5 +1,6 @@
 import './App.css';   
-import ArtistsDetails from './components/ArtistsDetails';
+import ArtistsDetails from './components/ArtistsDetails'; 
+import PodcastDetails from './components/PodcastDetails';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';  
 import Footer from './components/Footer';  
@@ -35,7 +36,8 @@ function App() {
             <Route path="/social" element={<Social />} /> 
             <Route path="/melody" element={<Melody />} /> 
             <Route path="/artists" element={<Artists />} />
-            <Route path="/artist/:artistName" element={<ArtistsDetails />} />
+            <Route path="/artist/:artistName" element={<ArtistsDetails />} /> 
+            <Route path="/podcast/:id" element={<PodcastDetails />} />
             <Route path="/genres" element={<Genres />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/trending" element={<Trending />} />  
