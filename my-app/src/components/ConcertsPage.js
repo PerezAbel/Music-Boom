@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/ConcertsPage.css';
 
 const ConcertsPage = () => {
-  const [concerts, setConcerts] = useState([
+  const [concerts] = useState([
     {
       id: 1,
       title: "Electric Dreams Festival",
@@ -72,9 +73,7 @@ const ConcertsPage = () => {
       genre: "Classical",
       isFeatured: false,
       ticketsAvailable: 89
-    },
-
-
+    }
   ]);
 
   const [filter, setFilter] = useState('all');
@@ -83,15 +82,13 @@ const ConcertsPage = () => {
   const [searchValue, setSearchValue] = useState('');
 
   const genres = [...new Set(concerts.map(concert => concert.genre))];
-  const countries = [...new Set(concerts.map(concert => concert.country))];
-  const locations = [...new Set(concerts.map(concert => concert.location))];
 
   const filteredConcerts = concerts.filter(concert => {
     const matchesFilter = filter === 'all' || concert.genre.toLowerCase() === filter.toLowerCase();
-    
+
     if (!searchType) return matchesFilter;
-    
-    switch(searchType) {
+
+    switch (searchType) {
       case 'genre':
         return matchesFilter && concert.genre.toLowerCase().includes(searchValue.toLowerCase());
       case 'country':
@@ -99,7 +96,6 @@ const ConcertsPage = () => {
       case 'location':
         return matchesFilter && concert.location.toLowerCase().includes(searchValue.toLowerCase());
       case 'nearby':
-        // In a real app, this would use geolocation
         return matchesFilter && concert.location.toLowerCase().includes('new york');
       default:
         return matchesFilter;
@@ -121,7 +117,7 @@ const ConcertsPage = () => {
 
       <div className="filter-container">
         <div className="filter-buttons">
-          <button 
+          <button
             className={filter === 'all' ? 'active' : ''}
             onClick={() => setFilter('all')}
           >
@@ -136,8 +132,9 @@ const ConcertsPage = () => {
               {genre}
             </button>
           ))}
+
           <div className="search-by-container">
-            <button 
+            <button
               className="search-by-button"
               onClick={() => setShowSearchDropdown(!showSearchDropdown)}
             >
@@ -162,7 +159,7 @@ const ConcertsPage = () => {
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
             />
-            <button 
+            <button
               className="clear-search"
               onClick={() => {
                 setSearchType(null);
@@ -200,7 +197,6 @@ const ConcertsPage = () => {
           </div>
         )}
       </section>
-
     </div>
   );
 };
@@ -214,28 +210,30 @@ const ConcertCard = ({ concert }) => {
 
   return (
     <div className="concert-card">
-      <div className="concert-image-container">
-        <img 
-          src={concert.image} 
-          alt={concert.title} 
-          className="concert-image"
-        />
-        <div className="tickets-badge">
-          {concert.ticketsAvailable} tickets left
+      <Link to={`/concerts/${concert.id}`} className="concert-link">
+        <div className="concert-image-container">
+          <img
+            src={concert.image}
+            alt={concert.title}
+            className="concert-image"
+          />
+          <div className="tickets-badge">
+            {concert.ticketsAvailable} tickets left
+          </div>
+          <div className="genre-badge">{concert.genre}</div>
         </div>
-        <div className="genre-badge">{concert.genre}</div>
-      </div>
-      <div className="concert-info">
-        <h3 className="concert-title">{concert.title}</h3>
-        <p className="concert-artist">{concert.artist}</p>
-        <div className="concert-details">
-          <p><strong>Date:</strong> {formattedDate}</p>
-          <p><strong>Time:</strong> {concert.time}</p>
-          <p><strong>Venue:</strong> {concert.location}</p>
-          <p><strong>Price:</strong> {concert.price}</p>
+        <div className="concert-info">
+          <h3 className="concert-title">{concert.title}</h3>
+          <p className="concert-artist">{concert.artist}</p>
+          <div className="concert-details">
+            <p><strong>Date:</strong> {formattedDate}</p>
+            <p><strong>Time:</strong> {concert.time}</p>
+            <p><strong>Venue:</strong> {concert.location}</p>
+            <p><strong>Price:</strong> {concert.price}</p>
+          </div>
+          <button className="book-now-btn">Get Tickets</button>
         </div>
-        <button className="book-now-btn">Get Tickets</button>
-      </div>
+      </Link>
     </div>
   );
 };

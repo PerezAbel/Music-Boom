@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AlbumDetail.css';
+import '../css/AlbumDetails.css';
 
 const AlbumDetail = () => {
   const [isPlaying, setIsPlaying] = useState(false);

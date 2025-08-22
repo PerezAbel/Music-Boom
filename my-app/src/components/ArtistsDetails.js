@@ -37,8 +37,46 @@ const ArtistDetails = ({ artistData }) => {
       { id: "a5", title: "Fearless", year: "2008", imageUrl: "https://upload.wikimedia.org/wikipedia/en/8/86/Taylor_Swift_-_Fearless.png" }
     ],
     followers: "102M",
-    monthlyListeners: "82.4M"           
-  };      
+    monthlyListeners: "82.4M"    
+    ,
+    
+     id: "1",
+    name: "Taylor Swift",
+    imageUrl: "https://ca-times.brightspotcdn.com/dims4/default/3530407/2147483647/strip/true/crop/6000x4000+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F9e%2F3d%2Fc8b2c91e444db977153126be99f4%2F67th-annual-grammy-awards-arrivals-84407.jpg",
+    bio: "Taylor Alison Swift is an American singer-songwriter. Her discography spans multiple genres, and her songwriting—often inspired by her personal life—has received critical praise and wide media coverage.",
+    genre: "Pop, Country, Folk",
+    activeYears: "2006–present",
+    labels: "Republic, Big Machine",
+    awards: [
+      "12 Grammy Awards",
+      "1 Emmy Award",
+      "40 American Music Awards",
+      "29 Billboard Music Awards",
+      "6 Guinness World Records"
+    ],
+    songs: [
+      { id: "s1", title: "Love Story", year: "2008", duration: "3:55" },
+      { id: "s2", title: "Blank Space", year: "2014", duration: "3:51" },
+      { id: "s3", title: "Shake It Off", year: "2014", duration: "3:39" },
+      { id: "s4", title: "Cardigan", year: "2020", duration: "3:59" },
+      { id: "s5", title: "Anti-Hero", year: "2022", duration: "3:20" }
+    ],
+    albums: [
+      { id: "1", title: "Midnights", year: "2022", imageUrl: "https://www.vinylchapters.com/wp-content/uploads/2022/10/tay1-750x420.jpg" },
+      { id: "a2", title: "Folklore", year: "2020", imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f8/Taylor_Swift_-_Folklore.png" },
+      { id: "a3", title: "1989", year: "2014", imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png" },
+      { id: "a4", title: "Red", year: "2012", imageUrl: "https://upload.wikimedia.org/wikipedia/en/e/e8/Taylor_Swift_-_Red.png" },
+      { id: "a5", title: "Fearless", year: "2008", imageUrl: "https://upload.wikimedia.org/wikipedia/en/8/86/Taylor_Swift_-_Fearless.png" }
+    ],
+    followers: "102M",
+    monthlyListeners: "82.4M" 
+
+
+    
+  };   
+  
+  
+  
 
   return (
     <div className="artist-detail-page">

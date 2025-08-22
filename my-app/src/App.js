@@ -1,7 +1,11 @@
 import './App.css';   
-import ArtistsDetails from './components/ArtistsDetails'; 
+import ArtistsDetails from './components/ArtistsDetails';  
+import AlbumDetails from './components/AlbumDetails'; 
 import PodcastDetails from './components/PodcastDetails'; 
-import SongDetails from './components/SongDetails';
+import SongDetails from './components/SongDetails';  
+import ConcertDetails from './components/ConcertDetails'; 
+import GenretDetails from './components/GenreDetails';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';  
 import Footer from './components/Footer';  
@@ -35,12 +39,15 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/live" element={<Live />} />  
             <Route path="/podcasts" element={<Podcasts />} />
-            <Route path="/social" element={<Social />} /> 
+            <Route path="/social" element={<Social />} />  
+            <Route path="/albums/:id" element={<AlbumDetails />} /> 
+            <Route path="/concerts/:id" element={<ConcertDetails />} />  
+            <Route path="/genredetails" element={<GenretDetails />} />
             <Route path="/melody" element={<Melody />} /> 
             <Route path="/artists" element={<Artists />} />
             <Route path="/artist/:artistName" element={<ArtistsDetails />} /> 
             <Route path="/podcast/:id" element={<PodcastDetails />} /> 
-              <Route path="/songdetails" element={<SongDetails />} />
+            <Route path="/songdetails" element={<SongDetails />} />
             <Route path="/genres" element={<Genres />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/trending" element={<Trending />} />  
