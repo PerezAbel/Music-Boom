@@ -1,0 +1,331 @@
+/* LandingPage.css (updated) */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #171717 0%, #131313a4 100%);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.landing-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+/* ---------- DIAMOND GRID ---------- */
+.landing-image-section {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image-content {
+  text-align: center;
+}
+
+.diamond-grid {
+  position: relative;
+  width: 600px;   /* bigger overall size */
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* Generic diamond wrapper */
+.diamond {
+  position: absolute;
+  width: 600px;  
+  height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  transform: rotate(45deg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 25px rgba(255, 20, 147, 0.8), 
+              0 0 50px rgba(255, 20, 147, 0.6), 
+              0 0 80px rgba(255, 20, 147, 0.5); /* pink neon glow */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.diamond img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+.diamond:hover {
+  transform: rotate(45deg) scale(1.08);
+  z-index: 20;
+  box-shadow: 0 0 35px rgba(255, 20, 147, 1),
+              0 0 70px rgba(255, 20, 147, 0.9),
+              0 0 110px rgba(255, 20, 147, 0.7); /* brighter on hover */
+}
+
+/* .diamond:hover img {
+  transform: rotate(-45deg) scale(1.15);
+} */
+
+
+/* Top */
+.diamond.top {
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, 0) rotate(45deg);
+  width: 180px;
+  height: 180px;
+}
+
+/* Right */
+.diamond.right {
+  left: 95%;
+  top: 50%;
+  transform: translate(-100%, -50%) rotate(45deg);
+  width: 250px;
+  height: 250px;
+}
+
+/* Bottom */
+.diamond.bottom {
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -100%) rotate(45deg);
+  width: 250px;
+  height: 250px;
+}
+
+/* Left */
+.diamond.left {
+  left: 5%;
+  top: 50%;
+  transform: translate(0, -50%) rotate(45deg);
+  width: 250px;
+  height: 250px;
+}
+
+/* smaller sizes for the 4 peripheral diamonds */
+.diamond.top,
+.diamond.right,
+.diamond.bottom,
+.diamond.left {
+  width: 220px;
+  height: 220px;
+}
+
+/* Captions and headings */
+.image-caption {
+  margin-top: 20px;
+}
+
+.image-caption h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #E0B0FF, #BB86FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.image-caption p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #D8C3FF;
+  margin-bottom: 25px;
+}
+
+/* rest of auth and layout (kept mostly same as yours, but ensure responsiveness) */
+.auth-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(190, 44, 136, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.auth-header { text-align:center; margin-bottom:30px; }
+.auth-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffb0fc, #f4f1f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+.auth-header p { font-size:1rem; color:#ffc3f4; }
+
+.auth-tabs { display:flex; margin-bottom:25px; border-bottom:1px solid #5E4B8B; }
+.auth-tabs button { flex:1; background:none; border:none; color:#B39DDB; padding:12px; font-size:16px; font-weight:600; cursor:pointer; transition:all .3s; }
+.auth-tabs button.active { color:white; border-bottom:2px solid #BB86FC; }
+
+.auth-form { display:flex; flex-direction:column; }
+.form-group { margin-bottom:20px; }
+.form-group input {
+  width:100%; padding:14px; border:1px solid #5E4B8B; border-radius:8px;
+  background: rgba(35,20,75,0.6); color:white; font-size:14px; box-sizing:border-box;
+}
+.form-group input:focus { outline:none; border-color:#BB86FC; box-shadow:0 0 0 2px rgba(187,134,252,0.3); }
+.form-options { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; font-size:14px; color:#B39DDB; }
+.checkbox-container { display:flex; align-items:center; cursor:pointer; }
+.checkbox-container input { margin-right:8px; accent-color:#BB86FC; }
+.forgot-link { color:#B39DDB; text-decoration:none; font-size:14px; transition:color .3s; }
+.forgot-link:hover { color:#E0B0FF; }
+
+.submit-btn {
+  background: linear-gradient(90deg,#9C70D1,#7B4CBF); color:white; border:none; padding:14px; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:20px; transition:all .3s; box-shadow:0 4px 15px rgba(156,112,209,0.3);
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow:0 6px 20px rgba(156,112,209,0.4); }
+
+.divider { display:flex; align-items:center; margin:20px 0; color:#9E8FC7; font-size:14px; }
+.divider::before, .divider::after { content:""; flex:1; border-bottom:1px solid #5E4B8B; }
+.divider span { padding:0 10px; }
+
+.social-auth { display:flex; gap:10px; margin-bottom:20px; }
+.social-btn { flex:1; padding:12px; border:1px solid #5E4B8B; border-radius:8px; background:rgba(35,20,75,0.6); color:white; font-size:14px; cursor:pointer; transition:all .3s; }
+.social-btn:hover { border-color:#BB86FC; background:rgba(187,134,252,0.1); }
+
+.auth-footer { text-align:center; color:#B39DDB; font-size:14px; margin-top:10px; }
+.auth-switch { background:none; border:none; color:#E0B0FF; cursor:pointer; text-decoration:underline; font-weight:600; transition:color .3s; }
+.auth-switch:hover { color:#BB86FC; }
+
+.demo-section { margin-top:30px; padding:25px; background:rgba(255,255,255,0.05); border-radius:12px; border:1px solid rgba(255,255,255,0.1); text-align:center; }
+.demo-section h2 { font-size:1.5rem; margin-bottom:10px; color:white; }
+.demo-btn { background:transparent; color:#BB86FC; border:2px solid #BB86FC; padding:12px 24px; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; transition:all .3s; }
+.demo-btn:hover { background:#BB86FC; color:white; transform:translateY(-2px); box-shadow:0 4px 15px rgba(187,134,252,0.3); }
+
+.social-media-section { margin-top:40px; padding:30px 0; border-top:1px solid rgba(255,255,255,0.1); width:100%; max-width:1200px; }
+.social-media-section h3 { font-size:1.2rem; margin-bottom:20px; color:#D8C3FF; }
+.social-icons { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.social-icon { width:45px; height:45px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem; transition:all .3s; cursor:pointer; }
+.social-icon:hover { background:#BB86FC; transform:translateY(-5px); }
+
+/* --------- Responsive Adjustments --------- */
+@media (max-width: 1024px) {
+  .landing-content {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .landing-image-section,
+  .auth-section {
+    max-width: 90%;
+  }
+
+  .diamond-grid {
+    width: 420px;
+    height: 420px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+
+  .diamond.center {
+    width: 200px;
+    height: 200px;
+  }
+
+  .diamond.top,
+  .diamond.right,
+  .diamond.bottom,
+  .diamond.left {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 30px 15px;
+  }
+
+  .diamond-grid {
+    width: 320px;
+    height: 320px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+
+  .diamond.center {
+    width: 160px;
+    height: 160px;
+  }
+
+  .diamond.top,
+  .diamond.right,
+  .diamond.bottom,
+  .diamond.left {
+    width: 110px;
+    height: 110px;
+  }
+
+  .auth-container {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-content {
+    gap: 30px;
+  }
+
+  .diamond-grid {
+    width: 240px;
+    height: 240px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .diamond.center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .diamond.top,
+  .diamond.right,
+  .diamond.bottom,
+  .diamond.left {
+    width: 80px;
+    height: 80px;
+  }
+
+  .auth-container {
+    padding: 20px;
+  }
+
+  .auth-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .auth-form input {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

@@ -42,7 +42,7 @@ function Melody() {
         {/* Page Title */}
         <div className="melody-title-container">
           <h1 className="melody-title">Melody</h1>
-          <p className="melody-subtitle">Your AI Music Companion</p>
+          <p className="melody-subtitle">Your AI Music Buddy</p>
           <div className="title-divider"></div>
         </div>
 
