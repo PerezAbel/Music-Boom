@@ -1,0 +1,36 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #2e0022, #32012f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.splash-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #b91d95;
+  letter-spacing: 0.2em;
+  animation: glow 1.5s ease-in-out infinite alternate, fadeInOut 2s ease forwards;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #b91d85, 0 0 10px #b91d8a, 0 0 20px #b91d7b;
+  }
+  to {
+    text-shadow: 0 0 20px #d71e96, 0 0 30px #d71ea9, 0 0 40px #d71ea3;
+  }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+

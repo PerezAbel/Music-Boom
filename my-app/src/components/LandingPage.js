@@ -3,9 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../css/LandingPage.css';
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 
-
 const images = [
- 
   {
     id: 'top',
     src: 'https://ca-times.brightspotcdn.com/dims4/default/8fa7359/2147483647/strip/true/crop/2000x2500+0+0/resize/2000x2500!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F79%2Ff0%2F3ffca92146909721a019d65e335c%2F1362470-env-billie-eilish-cover-photo-33.jpg',
@@ -23,7 +21,7 @@ const images = [
   },
   {
     id: 'left',
-    src: 'https://i.pinimg.com/736x/31/95/3e/31953e3ac22db89204593807f93f6a89.jpg',
+    src: 'https://joulesproductions.co.uk/wp-content/uploads/2022/01/recording-studio-music-producer-mixing-mastering.jpg',
     alt: 'Left Experience'
   }
 ];
@@ -60,15 +58,17 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
+
       <div className="landing-content">
-        {/* Diamond Image Section */}
-        <div className="landing-image-section">
+
+        {/* Diamond Grid Section */}
+        <div className="landing-image-section fade-slide-up stagger-1">
           <div className="landing-image-content">
             <div className="diamond-grid">
-              {images.map((img) => (
+              {images.map((img, idx) => (
                 <figure
                   key={img.id}
-                  className={`diamond ${img.id}`}
+                  className={`diamond ${img.id} fade-slide-up stagger-${idx + 2}`}
                   aria-label={img.alt}
                 >
                   <img src={img.src} alt={img.alt} />
@@ -76,7 +76,7 @@ const LandingPage = () => {
               ))}
             </div>
 
-            <div className="image-caption">
+            <div className="image-caption fade-slide-up stagger-5">
               <h2>Experience Music Like Never Before</h2>
               <p>Discover millions of songs, curated playlists, and exclusive content</p>
             </div>
@@ -84,8 +84,8 @@ const LandingPage = () => {
         </div>
 
         {/* Auth Section */}
-        <div className="auth-section">
-          <div className="auth-container">
+        <div className="auth-section fade-slide-up stagger-3">
+          <div className="auth-container fade-slide-up stagger-4">
             <div className="auth-header">
               <h1>Groovora</h1>
               <p>Your ultimate music streaming experience</p>
@@ -210,24 +210,24 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
       </div>
 
-      {/* Social area */}
-{/* Social area */}
-<div className="social-media-section">
-  <h3>Follow us</h3>
-  <div className="social-icons">
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-      <FaTwitter />
-    </a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-      <FaInstagram />
-    </a>
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-      <FaFacebook />
-    </a>
-  </div>
-</div>
+      {/* Social Media Section */}
+      <div className="social-media-section fade-slide-up stagger-5">
+        <h3>Follow us</h3>
+        <div className="social-icons">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon fade-slide-up stagger-1">
+            <FaTwitter />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon fade-slide-up stagger-2">
+            <FaInstagram />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon fade-slide-up stagger-3">
+            <FaFacebook />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
