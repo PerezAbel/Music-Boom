@@ -1,0 +1,270 @@
+.concert-details-page {
+  min-height: 100vh; 
+  width: 1700px;
+  background: linear-gradient(135deg, #2c2c2c 0%, #181818 50%, #474747 100%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.concert-hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  width: 100%;
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
+.concert-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin: 0.5rem 0;
+}
+
+.concert-tags {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.genre-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+}
+
+.date-badge {
+  background: #ff4d94;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.concert-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.concert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card, .description-card, .ticket-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3, .description-card h3, .ticket-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  text-align: center;
+}
+
+.detail-text p {
+  margin: 0;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 0.2rem;
+}
+
+.low-tickets {
+  color: #ff4d4d;
+  font-weight: 600;
+}
+
+.ticket-purchase {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.price-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.price-label {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.ticket-controls {
+  margin-bottom: 1.5rem;
+}
+
+.quantity-label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.counter button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.counter button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.counter button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.count {
+  font-size: 1.5rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
+}
+
+.total-section {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+.total-price {
+  font-weight: 700;
+  color: #4cd964;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buy-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+}
+
+.buy-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.limited-tickets {
+  text-align: center;
+  color: #ff4d4d;
+  font-weight: 600;
+  margin-top: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.concert-not-found {
+  text-align: center;
+  padding: 4rem;
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .concert-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .concert-header h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-overlay {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .concert-hero {
+    height: 50vh;
+  }
+  
+  .concert-content {
+    padding: 1rem;
+  }
+  
+  .concert-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .artist-name {
+    font-size: 1.2rem;
+  }
+}

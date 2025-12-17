@@ -1,0 +1,78 @@
+/* General layout for the sidebar and content */    
+.App-header{
+  display: flex; 
+}
+
+.app-container {
+  display: flex;   
+  background-color: #181818;
+  width:fit-content;
+  height: 100vh; /* Full viewport height */
+}
+.Main{
+  min-width: 0;  
+  background-color: #181818;   
+
+  
+}     
+
+.Min{
+  min-width: 0;  
+  background-color: #181818;   
+
+}
+
+.Search{  
+  display:flex;  
+  min-width: 20;
+
+}  
+
+
+.logo {
+  font-size: 24px;          /* Adjust size as desired */
+  font-weight: bold;
+  color: White;            /* Use a distinctive color */
+  text-align: center;
+  margin-bottom: 20px;       /* Add spacing below logo */
+  font-family: 'Arial', sans-serif; /* Adjust font family if needed */
+}
+
+.sidebar {
+  width: 200px; /* Fixed width for the sidebar */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #444;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 
+.btn-container {
+  margin-top: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+} */

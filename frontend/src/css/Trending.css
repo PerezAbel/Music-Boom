@@ -1,0 +1,177 @@
+.Trending-main {
+  padding: 20px;
+  background-color: #121212;
+  color: white;
+}
+
+.Trending-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.Trending-item {
+  position: relative;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.Trending-item:hover {
+  transform: scale(1.03);
+}
+
+.Trending-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.Trending-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 20px;
+  color: white;
+}
+
+.Trending-title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.Trending-description {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+/* Category headers */
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  color: #1db954;
+}
+
+/* Trending cards */
+.card {
+  position: relative;
+  min-width: 280px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: #1e1e1e;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.card-description {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.trending-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(29, 185, 84, 0.9);
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Shared styles */
+.category-section {
+  margin-bottom: 40px;
+}
+
+.scroll-wrapper {
+  position: relative;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: auto;
+  height: auto;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.scroll-button:hover {
+  opacity: 1;
+  color: #ccd4cf;
+  transform: translateY(-50%) scale(1.2);
+  background: transparent;
+}
+
+.scroll-button.left {
+  left: 10px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.scroll-button.right {
+  right: 10px;
+  background: linear-gradient(270deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
