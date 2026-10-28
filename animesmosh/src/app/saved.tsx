@@ -1,0 +1,2 @@
+import React from 'react';import {titles} from '../data/mock';import {useApp} from '../context/AppContext';import {Screen,Heading,Empty} from '../components/UI';import {TitleCard} from '../components/Content';
+export default function Saved(){const {saved}=useApp();const items=titles.filter(t=>saved.includes(t.id));return <Screen><Heading title="Your watchlist" subtitle="Stories you want to remember"/>{items.length?items.map(x=><TitleCard key={x.id} item={x}/>):<Empty text="Your watchlist is empty. Save something in Discover."/>}</Screen>}

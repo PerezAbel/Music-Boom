@@ -1,0 +1,1 @@
+export const C = { bg:'#080C18', surface:'#141B2C', surface2:'#1E2940', primary:'#9B7BFF', cyan:'#53D7F4', text:'#F5F6FF', muted:'#A6AEC4', line:'#2A354B', green:'#49D7A5', red:'#FF7196', gold:'#FFD178' };

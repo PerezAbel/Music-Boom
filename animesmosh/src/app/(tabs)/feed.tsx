@@ -1,0 +1,2 @@
+import React from 'react';import {router} from 'expo-router';import {Screen,Heading,Action} from '../../components/UI';import {PostCard} from '../../components/Content';import {useApp} from '../../context/AppContext';
+export default function Feed(){const {posts}=useApp();return <Screen><Heading title="Community feed" subtitle="Takes, recommendations, and fandom talk"/><Action label="Create a post" icon="add-circle" onPress={()=>router.push('/create-post')}/>{posts.map(p=><PostCard post={p} key={p.id}/>)}</Screen>}

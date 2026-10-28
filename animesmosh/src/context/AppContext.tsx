@@ -1,0 +1,14 @@
+import React,{createContext,useContext,useMemo,useState} from 'react';
+export type Post={id:string;author:string;fandom:string;content:string;likes:number;liked:boolean;time:string};
+export type Review={id:string;title:string;rating:number;text:string;author:string};
+type State={saved:string[];joined:string[];reminders:string[];posts:Post[];reviews:Review[];messages:Record<string,string[]>;handleSave:(id:string)=>void;handleJoin:(id:string)=>void;handleReminder:(id:string)=>void;addPost:(fandom:string,content:string)=>void;likePost:(id:string)=>void;addReview:(title:string,rating:number,text:string)=>void;sendMessage:(id:string,msg:string)=>void};
+const Context=createContext<State|null>(null);
+export function AppProvider({children}:{children:React.ReactNode}){
+const [saved,setSaved]=useState<string[]>([]),[joined,setJoined]=useState<string[]>([]),[reminders,setReminders]=useState<string[]>([]);
+const [posts,setPosts]=useState<Post[]>([{id:'p1',author:'MoonReader',fandom:'JJK Society',content:'Which character has the most interesting development? No spoilers in the first sentence 👀',likes:42,liked:false,time:'2h ago'},{id:'p2',author:'MangaMuse',fandom:'Grand Line Crew',content:'Weekly recommendation thread: share a hidden gem you finished recently!',likes:19,liked:false,time:'5h ago'},{id:'p3',author:'PanelPilot',fandom:'Blue Lock FC',content:'What makes a great sports-anime rival?',likes:27,liked:false,time:'Yesterday'}]);
+const [reviews,setReviews]=useState<Review[]>([{id:'rv1',title:'Attack on Titan',rating:5,text:'Tense storytelling and complex moral choices.',author:'KiraReads'},{id:'rv2',title:'Vinland Saga',rating:5,text:'Thoughtful character growth and gorgeous world building.',author:'PanelPilot'}]);
+const [messages,setMessages]=useState<Record<string,string[]>>({MoonReader:['Hey! Any good manga recommendations?'],MangaMuse:['I loved your review!']});
+const toggle=(set:React.Dispatch<React.SetStateAction<string[]>>,id:string)=>set(p=>p.includes(id)?p.filter(x=>x!==id):[...p,id]);
+const value=useMemo(()=>({saved,joined,reminders,posts,reviews,messages,handleSave:(id:string)=>toggle(setSaved,id),handleJoin:(id:string)=>toggle(setJoined,id),handleReminder:(id:string)=>toggle(setReminders,id),addPost:(fandom:string,content:string)=>setPosts(p=>[{id:String(Date.now()),author:'You',fandom,content,likes:0,liked:false,time:'Now'},...p]),likePost:(id:string)=>setPosts(p=>p.map(x=>x.id===id?{...x,liked:!x.liked,likes:x.likes+(x.liked?-1:1)}:x)),addReview:(title:string,rating:number,text:string)=>setReviews(p=>[{id:String(Date.now()),title,rating,text,author:'You'},...p]),sendMessage:(id:string,msg:string)=>setMessages(p=>({...p,[id]:[...(p[id]||[]),msg]}))}),[saved,joined,reminders,posts,reviews,messages]);
+return <Context.Provider value={value}>{children}</Context.Provider>}
+export function useApp(){const c=useContext(Context);if(!c)throw new Error('AppProvider missing');return c}
